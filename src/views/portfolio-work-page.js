@@ -1,45 +1,81 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Helmet } from 'react-helmet'
 
 import './portfolio-work-page.css'
 
 const PortfolioWorkPage = (props) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navLinks = [
+    { label: 'About', className: 'portfolio-work-page-text' },
+    { label: 'Services', className: 'portfolio-work-page-text' },
+    { label: 'Partners', className: 'portfolio-work-page-text' },
+    { label: 'Investors', className: 'portfolio-work-page-text' },
+    { label: 'Team', className: 'portfolio-work-page-text' },
+    { label: 'Contact', className: 'portfolio-work-page-text' },
+  ];
   return (
     <div className="portfolio-work-page-container">
       <Helmet>
-        <title>exported project</title>
+        <title>KGI Corporate</title>
       </Helmet>
       <div className="portfolio-work-page-portfolio-work-page">
-        <div className="portfolio-work-page-navigation-bar">
+        <nav className="portfolio-work-page-navigation-bar" role="navigation">
           <img
-            alt="sitelogoI313"
-            src="/sitelogoi313-reyk.svg"
+            alt="KGIcorporatelogoI313"
+            src="/logo.png"
             className="portfolio-work-page-sitelogo"
           />
-          <div className="portfolio-work-page-menu">
-            <div className="portfolio-work-page-about">
-              <span className="portfolio-work-page-text10 Navigation">
-                About
+          {/* Desktop nav links */}
+          <div className="portfolio-desktop-menu">
+            {navLinks.map((item, i) => (
+              <span key={item.label + i} className={`${item.className} Navigation`}>
+                {item.label}
               </span>
-            </div>
-            <div className="portfolio-work-page-contact">
-              <span className="portfolio-work-page-text11 Navigation">
-                Contact
-              </span>
-            </div>
-            <div className="portfolio-work-page-work">
-              <span className="portfolio-work-page-text12 Navigation">
-                Work
-              </span>
-            </div>
-            <div className="portfolio-work-page-playground">
-              <span className="portfolio-work-page-text13 Navigation">
-                Playground
-              </span>
+            ))}
+          </div>
+          {/* Hamburger for mobile */}
+          <button
+            className={`portfolio-hamburger${menuOpen ? ' open' : ''}`}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            aria-controls="main-nav-menu"
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
+        </nav>
+        {/* Fullscreen overlay menu */}
+        {menuOpen && (
+          <div className="portfolio-fullscreen-menu" id="main-nav-menu" role="menu">
+            <button
+              className="portfolio-menu-close"
+              aria-label="Close menu"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div className="portfolio-fullscreen-menu-items">
+              {navLinks.map((item, i) => (
+                <button
+                  key={item.label + i}
+                  className="portfolio-fullscreen-menu-link"
+                  tabIndex={0}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <span className={`${item.className} Navigation`}>
+                    {item.label}
+                  </span>
+                </button>
+              ))}
             </div>
           </div>
-        </div>
+        )}
+        {/* ...existing page content... */}
+
+        {/* Main content below nav/menu */}
         <div className="portfolio-work-page-section">
           <div className="portfolio-work-page-headline">
             <span className="portfolio-work-page-text14 Heading-1">
@@ -157,7 +193,7 @@ const PortfolioWorkPage = (props) => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default PortfolioWorkPage
