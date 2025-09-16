@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About / Concept — Kintsugi Global</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+
+  <style>
+    html { line-height: 1.15; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; color:#0d1117; background:#ffffff; }
+    *,*::before,*::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    img { display:block; max-width:100%; height:auto; }
+
+    :root{
+      --text:#0d1117;
+      --muted:#445066;
+      --border:#e5e7eb; 
+      --bg:#ffffff;
+      --radius:12px;
+      --maxw:1100px;
+      --xpad: clamp(32px, 5vw, 64px);
+    }
+
+    /* section */
+    .kg-about{ background:var(--bg); color:var(--text); padding: var(--xpad) 20px; }
+    .kg-about .container{ max-width:var(--maxw); margin:0 auto; }
+
+    /* header */
+    .section-head{ margin-bottom: 24px; }
+    .eyebrow{ letter-spacing:.08em; text-transform:uppercase; font-size:.75rem; color:var(--muted); margin-bottom:6px; }
+    .headline{ font-size: clamp(1.5rem, 2.8vw, 2rem); line-height:1.2; margin:0 0 10px; font-weight:700; }
+    .lede{ font-size:1rem; color:var(--muted); max-width:72ch; }
+
+    /* grid */
+    .about-grid{ display:grid; grid-template-columns: 1.1fr .9fr; gap:20px; align-items:start; margin-top: 20px; }
+    @media (max-width: 900px){ .about-grid{ grid-template-columns:1fr; } }
+
+    .problems{ display:grid; gap:12px; }
+    .problem-card{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:var(--radius);
+      padding:14px 16px;
+    }
+    .problem-card .num{ float:right; color:#6b7280; opacity:.5; font: 600 .9rem ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+    .problem-card h3{ margin:0 0 6px; font-size:1rem; }
+    .problem-card p{ margin:0; color:var(--muted); line-height:1.55; }
+
+    .visual{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:#fff;
+      overflow:hidden;
+    }
+    .visual figcaption{ font-size:.9rem; color:var(--muted); padding:10px 12px; }
+
+    .solution{
+      margin-top:24px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:#fff;
+      padding:16px;
+    }
+    .solution-title{ margin:0 0 8px; font-size:1.05rem; font-weight:700; }
+    .solution-list{ margin:0; padding-left:1.1em; color:var(--muted); }
+    .solution-list li{ margin:.35em 0; }
+
+    .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .badge{
+      display:inline-flex; align-items:center; border:1px solid var(--border);
+      border-radius:999px; padding:6px 10px; font-size:.85rem; color:var(--text); background:#fff;
+    }
+    .badge::before{ content:""; width:.45rem; height:.45rem; border-radius:999px; background:#c6a969; margin-right:8px; }
+  </style>
+</head>
+<body>
+
+  <!-- About / Concept Section -->
+  <section id="about" class="kg-about">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">About / Concept</p>
+        <h2 class="headline">Addressing the Artist–Fan Disconnect</h2>
+        <p class="lede">Kintsugi Global is the community-first creator economy platform helping anime and manga artists operate like one-person studios. We build direct creator–fan relationships and transform engaged audiences into sustainable funding — bridging Web2 familiarity with Web3 ownership.</p>
+      </header>
+
+      <div class="about-grid">
+        <div class="problems">
+          <article class="problem-card">
+            <span class="num">01</span>
+            <h3>Legacy Models Cut Off Global Fans</h3>
+            <p>Japan’s top-down publishing system overlooks international demand, fueling <strong>$15.5B+</strong> in piracy and breaking artist–fan relationships.</p>
+          </article>
+
+          <article class="problem-card">
+            <span class="num">02</span>
+            <h3>Artists Miss Out on Monetization</h3>
+            <p>Fans want to support creators directly, but artists lack a path to earn from their worldwide audiences — forcing demand into gray markets.</p>
+          </article>
+
+          <article class="problem-card">
+            <span class="num">03</span>
+            <h3>Discovery Platforms Leave Audiences Behind</h3>
+            <p>Mainstream crowdfunding tools don’t cultivate superfans. We prioritize discovery and community first, so funding starts with a ready audience.</p>
+          </article>
+        </div>
+
+        <figure class="visual">
+          <img src="https://placehold.co/960x720/svg?text=Traditional+Pipeline+vs+Kintsugi+Model" alt="Infographic comparing the legacy publishing pipeline with Kintsugi Global’s direct creator–fan connection model." />
+          <figcaption>Traditional pipeline → delays & disconnection. Kintsugi Global → direct creator–fan connection with community-first crowdfunding.</figcaption>
+        </figure>
+      </div>
+
+      <div class="solution">
+        <h3 class="solution-title">Our Solution: Community-First Crowdfunding</h3>
+        <ul class="solution-list">
+          <li><strong>Fan-Led Discovery:</strong> Digital magazines & curated manga surface rising artists early.</li>
+          <li><strong>Artist-Led Communities:</strong> Interactive hubs deepen relationships and retain superfans.</li>
+          <li><strong>Built-In Crowdfunding:</strong> Launch campaigns inside engaged communities — no top-down middlemen.</li>
+        </ul>
+        <div class="badges">
+          <span class="badge" aria-label="Selected for DigiDen">Selected for DigiDen</span>
+          <span class="badge" aria-label="35+ artist LOIs">35+ Artist LOIs</span>
+          <span class="badge" aria-label="$15.5B+ market to capture">$15.5B+ Market</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
