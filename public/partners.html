@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Partners — Kintsugi Global</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+
+  <style>
+  :root {
+    --text: #0d1117;
+    --muted: #5b677c;
+    --border: #e5e7eb;
+    --bg: #fff;
+    --radius: 12px;
+    --maxw: 1040px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.5;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+
+  /*  layout */
+  .kg-partners { padding: 48px 24px; }
+  .container { max-width: var(--maxw); margin: 0 auto; }
+
+  /*  type  */
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin: 0 0 6px;
+  }
+  .headline {
+    font-size: 2rem;    
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+  .lede {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 70ch;
+    margin: 0;
+  }
+
+  /*  cards grid  */
+  .featured {
+    display: grid;
+    gap: 16px;
+    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .card {
+    border: 1px solid var(--border);
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 16px;
+  }
+  .card h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+  }
+  .card p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  /* --- benefits --- */
+  .benefits {
+    margin-top: 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    background: #fff;
+  }
+  .benefits h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+  }
+  .benefits ul {
+    margin: 0;
+    padding-left: 1.1em;
+    color: var(--muted);
+  }
+  .benefits li { margin: 0.35em 0; }
+
+  /* --- cta --- */
+  .cta {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    background: #fff;
+  }
+  .cta p { margin: 0; color: var(--muted); }
+
+  .btn {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    background: #0d1117;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn:hover { opacity: 0.9; }
+
+</style>
+
+</head>
+<body>
+
+  <section id="partners" class="kg-partners">
+    <div class="container">
+      <p class="eyebrow">Partners</p>
+      <h2 class="headline">Strategic Partnerships Driving Global Growth</h2>
+      <p class="lede">We collaborate with technology leaders and content innovators to connect artists and fans worldwide—responsibly, scalably, and with cultural authenticity.</p>
+
+      <!-- Featured partnerships -->
+      <div class="featured">
+        <article class="card">
+          <h3>Japan’s DigiDen Initiative</h3>
+          <p>Selected supporter contributing to global Japanese content strategy and government-aligned ecosystem growth.</p>
+        </article>
+        <article class="card">
+          <h3>Unstoppable Domains</h3>
+          <p>Web3 infrastructure partnership powering decentralized identity and domain management for creators and fans.</p>
+        </article>
+        <article class="card">
+          <h3>Studio Orange</h3>
+          <p>$150k validation revenue from A/B willingness-to-pay testing to guide product-market fit and pricing.</p>
+        </article>
+        <article class="card">
+          <h3>More Partners</h3>
+          <p>We’re actively expanding collaborations across publications, gaming, platforms, and brand activations.</p>
+        </article>
+      </div>
+
+      <!-- Benefits / Why partner with us -->
+      <div class="benefits">
+        <h3>Partner Collaboration Benefits</h3>
+        <ul>
+          <li>Access to engaged anime fan communities</li>
+          <li>Advanced analytics to optimize marketing strategies</li>
+          <li>Collaborations with top creators on exclusive content</li>
+          <li>Virtual events that resonate with superfans</li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta">
+        <p>Interested in partnering with Kintsugi Global?</p>
+        <a class="btn" href="mailto:ron@kintsugi.global">Partner With Us</a>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+
