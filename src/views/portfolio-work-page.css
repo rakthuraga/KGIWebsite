@@ -147,19 +147,19 @@
 .portfolio-work-page-container {
   width: 100%;
   display: flex;
-  overflow: auto;
-  min-height: 100vh;
+  overflow: visible;
+  min-height: auto;
   align-items: center;
   flex-direction: column;
 }
  
 .portfolio-work-page-portfolio-work-page {
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: rgba(243, 243, 243, 1);
+  background-color: transparent;
 }
  
 .portfolio-work-page-navigation-bar {
@@ -627,3 +627,9 @@
 
 /* Provide top spacing for content now that nav is in normal flow */
 .portfolio-work-page-section { margin-top: 40px; }
+
+/* Hide legacy portfolio content to avoid dual-scroll experience */
+.portfolio-work-page-section,
+.portfolio-work-page-footer {
+  display: none !important;
+}
