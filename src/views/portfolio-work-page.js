@@ -177,20 +177,6 @@ const PortfolioWorkPage = (props) => {
             />
           </div>
         </div>
-        <div className="portfolio-work-page-footer">
-          <span className="portfolio-work-page-text41 Navigation">
-            <span>Mehmet Akif Karasu ⏤ 2020</span>
-            <br></br>
-          </span>
-          <span className="portfolio-work-page-text44 Navigation">
-            <span>Artstation</span>
-            <br></br>
-          </span>
-          <span className="portfolio-work-page-text47 Navigation">
-            Linkedin
-          </span>
-          <span className="portfolio-work-page-text48 Navigation">Twitter</span>
-        </div>
       </div>
     </div>
   );
