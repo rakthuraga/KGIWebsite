@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Services — Kintsugi Global</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+
+  <style>
+    html { line-height: 1.15; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; color:#0d1117; background:#ffffff; }
+    *,*::before,*::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    img { display:block; max-width:100%; height:auto; border-radius: 10px; }
+
+    :root{
+      --text:#0d1117;
+      --muted:#5b677c;
+      --border:#e5e7eb;
+      --bg:#ffffff;
+      --radius:12px;
+      --maxw:1100px;
+      --xpad: clamp(32px, 5vw, 64px);
+    }
+
+    .kg-services{ background:var(--bg); color:var(--text); padding: var(--xpad) 20px; }
+    .container{ max-width:var(--maxw); margin:0 auto; }
+
+    .eyebrow{ letter-spacing:.08em; text-transform:uppercase; font-size:.75rem; color:var(--muted); margin:0 0 6px; }
+    .headline{ font-size: clamp(1.6rem, 3vw, 2.1rem); line-height:1.2; margin:0 0 10px; font-weight:800; }
+    .lede{ font-size:1rem; color:var(--muted); max-width:72ch; margin:0; }
+
+    /* service overview */
+    .grid{ display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin-top: 20px; }
+    .svc{ border:1px solid var(--border); border-radius:var(--radius); background:#fff; padding:16px; display:grid; gap:12px; grid-template-columns: 92px 1fr; align-items:start; }
+    .svc .icon { width:92px; height:92px; border:1px solid var(--border); border-radius:10px; background: #f7f7f8 url('https://placehold.co/92x92?text=Icon') center/cover no-repeat; }
+    .svc h3{ margin:0; font-size:1.05rem; }
+    .svc p{ margin:6px 0 0; color:var(--muted); line-height:1.55; font-size:.95rem; }
+    .svc ul{ margin:6px 0 0; padding-left:1.1em; color:var(--muted); }
+    .svc li{ margin:.3em 0; }
+
+    /* key features */
+    .features{ margin-top:24px; border:1px solid var(--border); border-radius:var(--radius); background:#fff; padding:16px; }
+    .features h3{ margin:0 0 8px; font-size:1.05rem; }
+    .features ul{ margin:0; padding-left:1.1em; color:var(--muted); }
+    .features li{ margin:.35em 0; }
+  </style>
+</head>
+<body>
+
+  <section id="services" class="kg-services">
+    <div class="container">
+      <p class="eyebrow">Services</p>
+      <h2 class="headline">Community-First Crowdfunding Platform</h2>
+
+      <div class="grid" aria-label="Service Overview">
+        <!-- Fan-Led Artist Discovery Hub -->
+        <article class="svc">
+          <div class="icon" aria-hidden="true"></div>
+          <div class="copy">
+            <h3>Fan-Led Artist Discovery Hub</h3>
+            <ul>
+              <li>Digital magazines and manga spotlight rising artists</li>
+              <li>Content shaped by fan interest driving early discovery</li>
+              <li>Deep, meaningful engagement before funding</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Artist-Led Communities That Scale -->
+        <article class="svc">
+          <div class="icon" aria-hidden="true"></div>
+          <div class="copy">
+            <h3>Artist-Led Communities That Scale</h3>
+            <ul>
+              <li>Interactive social hubs for building loyal fanbases</li>
+              <li>Direct creator-fan relationships and engagement</li>
+              <li>Turn community engagement into lasting support</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Built-In Crowdfunding for Artists -->
+        <article class="svc">
+          <div class="icon" aria-hidden="true"></div>
+          <div class="copy">
+            <h3>Built-In Crowdfunding for Artists</h3>
+            <ul>
+              <li>Leverage engaged communities for campaign launches</li>
+              <li>No top-down middlemen — direct decentralized funding</li>
+              <li>Artist-led campaigns from superfans who already know and love their work</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- Key Features -->
+      <section class="features" aria-labelledby="key-features">
+        <h3 id="key-features">Key Features</h3>
+        <ul>
+          <li><strong>Publications & Manga:</strong> Build engaged readership while featuring upcoming artists</li>
+          <li><strong>Social Communities:</strong> Centered around artists — fans interact directly</li>
+          <li><strong>Integrated Crowdfunding:</strong> Fund future projects straight from the source</li>
+        </ul>
+      </section>
+
+    </div>
+  </section>
+
+</body>
+</html>
+
+

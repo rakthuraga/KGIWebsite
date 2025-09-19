@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kintsugi Global — Get Involved</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <style>
+    :root{
+      --bg:#f6f7f9; --text:#0d1117; --muted:#6b7280; --border:#e5e7eb; --brand:#0d1117; --radius:12px;
+      --accent:#DF1824; /* matches brand red seen in existing footer icon fills */
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";}
+    .container{max-width:1100px; margin:0 auto; padding:28px 16px;}
+    header.page{padding:28px 0 10px;}
+    h1{margin:0 0 8px; font-size:clamp(1.4rem, 2.4vw + .8rem, 2rem);}
+    p.lede{color:var(--muted); margin:0;}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin-top:18px;}
+    .card{background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:16px;}
+    .card h2{margin:.2rem 0 .2rem; font-size:1.1rem}
+    .card p{margin:.35rem 0; color:var(--muted)}
+    .cta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    /* Borrowed look from partners.html */
+    .btn{
+      appearance:none; border:none; cursor:pointer; background:var(--brand); color:#fff;
+      padding:10px 14px; border-radius:10px; font-weight:600; font-size:.95rem; text-decoration:none; display:inline-block;
+    }
+    .btn:hover{opacity:.92}
+    .btn.secondary{background:#111827}
+    .btn.ghost{background:#fff; color:var(--brand); border:1px solid var(--border)}
+    .eyebrow{letter-spacing:.06em; text-transform:uppercase; font-weight:700; color:var(--muted); font-size:.8rem}
+    section.block{margin:22px 0}
+    /* Forms (lightweight; pairs with .sub-f-btn already used in contact/corporate) */
+    form{display:grid; gap:10px; margin-top:10px}
+    label{font-weight:600}
+    input, textarea{width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px; font:inherit}
+    textarea{min-height:120px}
+    .sub-f-btn{background:var(--accent); color:#fff; border:none; border-radius:10px; padding:10px 14px; font-weight:700; cursor:pointer}
+    .sub-f-btn:hover{opacity:.92}
+    /* Card accents per audience */
+    .tag{display:inline-block; padding:4px 8px; border-radius:999px; background:#fff; border:1px solid var(--border); color:var(--muted); font-size:.8rem}
+    footer.page{margin:40px 0 20px; color:var(--muted); font-size:.9rem}
+  </style>
+</head>
+<body style="background:var(--bg)">
+
+  <div class="container">
+    <header class="page" aria-label="CTA hub header">
+      <div class="eyebrow">Get Involved</div>
+      <h1>Pick your path — creators, fans, partners, investors</h1>
+      <p class="lede">Quick links and forms to take action right now.</p>
+    </header>
+
+<!-- Role-specific sign-up blocks (two cards in a row: Artists & Fans) -->
+<section class="block">
+    <div class="grid two-col">
+        <!-- Artists (col 1) -->
+        <article id="artists" class="card" aria-labelledby="artists-h">
+            <span class="tag">For Artists</span>
+            <h2 id="artists-h">Join Our Creator Community</h2>
+            <p>Operate like a one-person studio with community, tools, and funding.</p>
+
+            <!-- 1) Apply as Creator -->
+            <form onsubmit="return false" aria-label="Artist application" method="post" action="#">
+                <input type="hidden" name="audience" value="artist">
+                <input type="hidden" name="intent" value="apply">
+                <label for="ar1-name">Name</label>
+                <input id="ar1-name" name="name" type="text" placeholder="Full name" required>
+                <label for="ar1-email">Email</label>
+                <input id="ar1-email" name="email" type="email" placeholder="you@example.com" required>
+                <label for="ar1-link">Portfolio / Social</label>
+                <input id="ar1-link" name="link" type="url" placeholder="https://...">
+                <button type="submit" class="sub-f-btn">Apply as Creator</button>
+            </form>
+
+            <hr style="margin:12px 0; border:none; height:1px; background:var(--border, #e5e7eb); opacity:.7;">
+
+            <!-- 2) Get Early Access -->
+            <form onsubmit="return false" aria-label="Artist early access" method="post" action="#">
+                <input type="hidden" name="audience" value="artist">
+                <input type="hidden" name="intent" value="early-access">
+                <label for="ar2-name">Name</label>
+                <input id="ar2-name" name="name" type="text" placeholder="Full name" required>
+                <label for="ar2-email">Email</label>
+                <input id="ar2-email" name="email" type="email" placeholder="you@example.com" required>
+                <button type="submit" class="sub-f-btn">Get Early Access</button>
+            </form>
+        </article>
+
+        <!-- Fans (col 2) -->
+        <article id="fans" class="card" aria-labelledby="fans-h">
+            <span class="tag">For Fans</span>
+            <h2 id="fans-h">Get Updates on New Drops</h2>
+            <p>Follow rising artists and support projects you love.</p>
+
+            <!-- 1) Newsletter -->
+            <form onsubmit="return false" aria-label="Fan newsletter signup" method="post" action="#">
+                <input type="hidden" name="audience" value="fan">
+                <input type="hidden" name="intent" value="newsletter">
+                <label for="fan1-email">Email</label>
+                <input id="fan1-email" name="email" type="email" placeholder="you@example.com" required>
+                <button type="submit" class="sub-f-btn">Subscribe</button>
+            </form>
+
+            <hr style="margin:12px 0; border:none; height:1px; background:var(--border, #e5e7eb); opacity:.7;">
+
+            <!-- 2) Join Fan Beta -->
+            <form onsubmit="return false" aria-label="Fan beta waitlist" method="post" action="#">
+                <input type="hidden" name="audience" value="fan">
+                <input type="hidden" name="intent" value="fan-beta">
+                <label for="fan2-email">Email</label>
+                <input id="fan2-email" name="email" type="email" placeholder="you@example.com" required>
+                <button type="submit" class="sub-f-btn">Join Fan Beta</button>
+            </form>
+        </article>
+    </div>
+</section>
+
+<section class="block">
+    <div class="grid two-col">
+        <!-- Investors (col 1) -->
+        <article id="investors" class="card" aria-labelledby="investors-h">
+            <span class="tag">For Investors</span>
+            <h2 id="investors-h">Request Investor Materials</h2>
+            <p>$2M seed details, use of proceeds, and validation stats.</p>
+
+            <!-- 1) Request Deck -->
+            <form onsubmit="return false" aria-label="Investor deck request" method="post" action="#">
+                <input type="hidden" name="audience" value="investor">
+                <input type="hidden" name="intent" value="deck">
+                <label for="in1-name">Name</label>
+                <input id="in1-name" name="name" type="text" placeholder="Full name" required>
+                <label for="in1-email">Email</label>
+                <input id="in1-email" name="email" type="email" placeholder="you@fund.com" required>
+                <label for="in1-firm">Firm</label>
+                <input id="in1-firm" name="firm" type="text" placeholder="Fund / Family Office">
+                <button type="submit" class="sub-f-btn">Request Deck</button>
+            </form>
+
+            <hr style="margin:12px 0; border:none; height:1px; background:var(--border, #e5e7eb); opacity:.7;">
+
+            <!-- 2) Request a Call -->
+            <form onsubmit="return false" aria-label="Investor call request" method="post" action="#">
+                <input type="hidden" name="audience" value="investor">
+                <input type="hidden" name="intent" value="call">
+                <label for="in2-name">Name</label>
+                <input id="in2-name" name="name" type="text" placeholder="Full name" required>
+                <label for="in2-email">Email</label>
+                <input id="in2-email" name="email" type="email" placeholder="you@fund.com" required>
+                <label for="in2-firm">Firm</label>
+                <input id="in2-firm" name="firm" type="text" placeholder="Fund / Family Office">
+                <button type="submit" class="sub-f-btn">Request a Call</button>
+            </form>
+        </article>
+
+        <!-- Partners (col 2) -->
+        <article id="partners-cta" class="card" aria-labelledby="partners-h">
+            <span class="tag">For Partners</span>
+            <h2 id="partners-h">Partner With Us</h2>
+            <p>Collaborate on launches, activations, and data-backed audience growth.</p>
+
+            <!-- 1) Partnership Inquiry -->
+            <form onsubmit="return false" aria-label="Partnership inquiry" method="post" action="#">
+                <input type="hidden" name="audience" value="partner">
+                <input type="hidden" name="intent" value="inquiry">
+                <label for="pa1-name">Full Name</label>
+                <input id="pa1-name" name="name" type="text" placeholder="Jane Doe" required>
+                <label for="pa1-company">Company</label>
+                <input id="pa1-company" name="company" type="text" placeholder="Company LLC">
+                <label for="pa1-email">Email</label>
+                <input id="pa1-email" name="email" type="email" placeholder="you@company.com" required>
+                <label for="pa1-message">Your Message</label>
+                <textarea id="pa1-message" name="message" placeholder="Tell us what you have in mind…"></textarea>
+                <button type="submit" class="sub-f-btn">Send Inquiry</button>
+            </form>
+
+            <hr style="margin:12px 0; border:none; height:1px; background:var(--border, #e5e7eb); opacity:.7;">
+
+            <!-- 2) Request a Call -->
+            <form onsubmit="return false" aria-label="Partner call request" method="post" action="#">
+                <input type="hidden" name="audience" value="partner">
+                <input type="hidden" name="intent" value="call">
+                <label for="pa2-name">Full Name</label>
+                <input id="pa2-name" name="name" type="text" placeholder="Jane Doe" required>
+                <label for="pa2-email">Email</label>
+                <input id="pa2-email" name="email" type="email" placeholder="you@company.com" required>
+                <button type="submit" class="sub-f-btn">Request a Call</button>
+            </form>
+        </article>
+    </div>
+</section>
+
+
+    <!-- Additional CTAs (#18) -->
+    <section id="newsletter" class="block card" aria-labelledby="newsletter-h">
+      <h2 id="newsletter-h">Newsletter Signup</h2>
+      <p class="lede">Get platform updates and early artist drops.</p>
+      <form onsubmit="return false" aria-label="Newsletter sign up">
+        <label for="nl-email">Email</label>
+        <input id="nl-email" name="email" type="email" placeholder="you@example.com" required aria-required="true" />
+        <button type="submit" class="sub-f-btn">Subscribe</button>
+      </form>
+    </section>
+
+    <section id="early-access" class="block card" aria-labelledby="early-h">
+      <h2 id="early-h">Early Access Registration</h2>
+      <p class="lede">Be among the first to try new creator & fan features.</p>
+      <form onsubmit="return false" aria-label="Early access registration">
+        <label for="ea-name">Name</label>
+        <input id="ea-name" name="name" type="text" placeholder="Full name" required aria-required="true" />
+        <label for="ea-email">Email</label>
+        <input id="ea-email" name="email" type="email" placeholder="you@example.com" required aria-required="true" />
+        <button type="submit" class="sub-f-btn">Request Access</button>
+      </form>
+    </section>
+
+    <!-- Direct Contact Scheduling (uses Calendly inline embed) -->
+    <section id="schedule" class="block card" aria-labelledby="sched-h">
+      <h2 id="sched-h">Schedule a Call</h2>
+      <p class="lede">Pick a time that works — no back-and-forth.</p>
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com"
+           style="min-width:320px;height:700px;"></div>
+      <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </section>
+
+    <!-- Lightweight investor anchor so the Investor CTA has a real target -->
+    <section id="investors-info" class="block card" aria-labelledby="invest-info-h">
+      <h2 id="invest-info-h">Investor Information</h2>
+      <p>For the latest pitch materials, please schedule a call above or email <a href="mailto:ron@kintsugi.global">ron@kintsugi.global</a>.</p>
+    </section>
+
+    <footer class="page">
+      <span>© 2025 Kintsugi Global, Inc.</span>
+    </footer>
+  </div>
+
+  <!-- Accessibility notes: CTAs that navigate are anchors styled as buttons per WAI guidance. -->
+</body>
+</html>
