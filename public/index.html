@@ -90,6 +90,23 @@
   <body>
     <div id="app"></div>
 
+    <!-- Navigation Bar -->
+    <nav class="navbar" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; padding: 12px 20px;">
+      <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo">
+          <img src="logo.png" alt="Kintsugi Global" style="height: 40px; width: auto; max-width: 200px;" />
+        </div>
+        <div class="nav-links" style="display: flex; gap: 24px;">
+          <a href="#about" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">About</a>
+          <a href="#services" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Services</a>
+          <a href="#partners" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Partners</a>
+          <a href="#investors" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Investors</a>
+          <a href="#leadership" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Team</a>
+          <a href="#contact" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Contact</a>
+        </div>
+      </div>
+    </nav>
+
     <section class="section-embed" id="hero">
       <iframe
         src="hero.html"
@@ -163,7 +180,7 @@
         scrolling="no"
       ></iframe>
     </section>
-    <section class="section-embed" id="japan">
+    <section class="section-embed" id="contact">
       <iframe
         src="ctas.html"
         title="Call to Actions"
@@ -264,6 +281,15 @@
       footer a[aria-label="LinkedIn"]:hover {
         background: rgba(0, 119, 181, 0.3);
         transform: translateY(-2px);
+      }
+    </style>
+
+    <style>
+      /* Navbar Styles */
+      .navbar .nav-links a:hover { background-color: rgba(223, 24, 36, 0.1); }
+      @media (max-width: 768px) {
+        .navbar .nav-links { display: none; } /* Hide nav links on mobile for now */
+        .navbar { padding: 16px 20px; }
       }
     </style>
 

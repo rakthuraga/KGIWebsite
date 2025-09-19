@@ -51,11 +51,6 @@
         <h1 class="headline">Empowering Artists, Connecting Communities Seamlessly</h1>
         <p class="tagline" style="font-size: 1.5rem; font-weight: 600; color: #DF1824; margin: 14px 0 22px 0; letter-spacing: 0.5px;">The Only Crowdfunding Platform that Builds Audiences First</p>
         <p class="lede">Kintsugi Global is the all-in-one creator economy platform enabling anime and manga artists to operate as one-person studios. Backed by Japan's national DigiDen initiative, we're positioned to lead the global distribution of Japanese creative IP.</p>
-        <div class="cta">
-          <a class="btn primary" href="#about">Join as Creator</a>
-          <a class="btn secondary" href="#partners">Explore Content</a>
-          <a class="btn secondary" href="#partners">Partner With Us</a>
-        </div>
         <div class="stats">
           <a class="stat"
              href="https://piracymonitor.org/japan-piracy-rate-exceeds-%C2%A52-trillion-in-2022-according-to-pwc-study-for-coda/?utm_source=chatgpt.com"
@@ -84,6 +79,30 @@
       </div>
     </div>
   </section>
+
+  <script>
+    function scrollToSection(sectionId) {
+      // Prevent default link behavior
+      event.preventDefault();
+      
+      // Tell parent window to scroll to the section
+      if (window.parent) {
+        // Set the hash in parent window
+        window.parent.location.hash = sectionId;
+        
+        // Find the target element in parent and scroll to it
+        const targetElement = window.parent.document.getElementById(sectionId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+      
+      return false;
+    }
+  </script>
 
 </body>
 </html>
