@@ -96,6 +96,14 @@
         <div class="logo">
           <img src="logo.png" alt="Kintsugi Global" style="height: 40px; width: auto; max-width: 200px;" />
         </div>
+
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" style="background: none; border: none; cursor: pointer; padding: 8px;">
+          <span class="hamburger-line" style="display: block; width: 25px; height: 3px; background: #0d1117; margin: 5px 0; transition: 0.3s;"></span>
+          <span class="hamburger-line" style="display: block; width: 25px; height: 3px; background: #0d1117; margin: 5px 0; transition: 0.3s;"></span>
+          <span class="hamburger-line" style="display: block; width: 25px; height: 3px; background: #0d1117; margin: 5px 0; transition: 0.3s;"></span>
+        </button>
+
         <div class="nav-links" style="display: flex; gap: 24px;">
           <a href="#about" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">About</a>
           <a href="#services" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Services</a>
@@ -103,6 +111,16 @@
           <a href="#investors" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Investors</a>
           <a href="#leadership" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Team</a>
           <a href="#contact" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Contact</a>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="nav-links mobile-menu" style="display: flex; gap: 24px;">
+          <a href="#about" onclick="toggleMobileMenu()" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">About</a>
+          <a href="#services" onclick="toggleMobileMenu()" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Services</a>
+          <a href="#partners" onclick="toggleMobileMenu()" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Partners</a>
+          <a href="#investors" onclick="toggleMobileMenu()" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Investors</a>
+          <a href="#leadership" onclick="toggleMobileMenu()" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Team</a>
+          <a href="#contact" onclick="toggleMobileMenu()" style="color: #0d1117; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: background-color 0.3s;">Contact</a>
         </div>
       </div>
     </nav>
@@ -222,6 +240,36 @@
           window.addEventListener('resize', function(){ iframes.forEach(resizeIframe); });
         });
       })();
+      
+      // Hamburger Menu Toggle Function
+      function toggleMobileMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.nav-links.mobile-menu');
+
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      }
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.nav-links.mobile-menu');
+
+        if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
+          hamburger.classList.remove('active');
+          mobileMenu.classList.remove('active');
+        }
+      });
+
+      // Close mobile menu on window resize to larger screens
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 1024) {
+          const hamburger = document.querySelector('.hamburger');
+          const mobileMenu = document.querySelector('.nav-links.mobile-menu');
+          hamburger.classList.remove('active');
+          mobileMenu.classList.remove('active');
+        }
+      });
     </script>
 
     <!-- Global Footer -->
@@ -287,12 +335,96 @@
     <style>
       /* Navbar Styles */
       .navbar .nav-links a:hover { background-color: rgba(223, 24, 36, 0.1); }
-      @media (max-width: 768px) {
-        .navbar .nav-links { display: none; } /* Hide nav links on mobile for now */
+      
+      /* Mobile Menu Styles */
+      .hamburger { display: none; }
+      .hamburger.active .hamburger-line:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+      .hamburger.active .hamburger-line:nth-child(2) { opacity: 0; }
+      .hamburger.active .hamburger-line:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+      
+      .nav-links.mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #e5e7eb;
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+      }
+      
+      .nav-links.mobile-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .nav-links.mobile-menu a {
+        padding: 12px 16px;
+        margin: 4px 0;
+        border-radius: 8px;
+        text-align: center;
+        display: block;
+      }
+      
+      /* Section Spacing Fixes */
+      .section-embed {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .section-embed iframe {
+        margin: 0;
+        padding: 0;
+        display: block;
+      }
+      
+      /* Remove default spacing between sections */
+      .section-embed + .section-embed {
+        margin-top: 0;
+      }
+      
+      /* Footer spacing */
+      footer {
+        margin-top: 0;
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .hamburger { display: block !important; }
+        .nav-links:not(.mobile-menu) { display: none !important; }
         .navbar { padding: 16px 20px; }
       }
-    </style>
-
-  </body>
+      
+      @media (min-width: 1025px) {
+        .hamburger { display: none !important; }
+        .nav-links.mobile-menu { display: none !important; }
+      }
+      
+      /* Additional responsive improvements */
+      @media (max-width: 768px) {
+        .navbar { padding: 12px 16px; }
+        .logo img { height: 32px; max-width: 150px; }
+        .nav-links.mobile-menu { padding: 16px; }
+        .nav-links.mobile-menu a { padding: 10px 12px; font-size: 14px; }
+      }
+      
+      @media (max-width: 480px) {
+        .navbar { padding: 10px 12px; }
+        .logo img { height: 28px; max-width: 120px; }
+        .hamburger-line { width: 22px; height: 2px; }
+        .nav-links.mobile-menu { padding: 12px; }
+        .nav-links.mobile-menu a { padding: 8px 10px; font-size: 13px; }
+      }
+    </style>  </body>
 
 </html>
