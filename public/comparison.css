@@ -1,0 +1,63 @@
+/* Comparison Section Styles (extracted from React component variant) */
+html{ line-height:1.15; }
+body{ margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; background:#ffffff; color:#0d1117; }
+
+:root{
+  --cc-bg:#ffffff;
+  --cc-text:#0d1117;
+  --cc-muted:#4b5563;
+  --cc-border:#e5e7eb;
+  --cc-accent:#111827;
+  --cc-highlight:#111827;
+  --cc-yes:#065f46;
+  --cc-partial:#92400e;
+  --cc-no:#6b7280;
+  --cc-radius:12px;
+  --cc-maxw:1100px;
+  --cc-pad: clamp(32px,5vw,72px);
+}
+
+.cc-section{ background:var(--cc-bg); padding: var(--cc-pad) 20px 100px; color:var(--cc-text); }
+.cc-container{ max-width:var(--cc-maxw); margin:0 auto; }
+.cc-head{ max-width:860px; margin:0 0 36px; }
+.cc-eyebrow{ letter-spacing:.1em; text-transform:uppercase; font-size:.7rem; font-weight:600; color:var(--cc-muted); margin:0 0 6px; }
+.cc-title{ font-size: clamp(1.65rem,3vw,2.2rem); line-height:1.15; margin:0 0 14px; font-weight:700; }
+.cc-intro{ font-size:1rem; line-height:1.55; color:var(--cc-muted); margin:0; }
+
+.cc-table-container{ overflow-x:auto; border:1px solid var(--cc-border); border-radius:var(--cc-radius); background:#fff; }
+.cc-table{ width:100%; border-collapse: collapse; font-size:.9rem; }
+.cc-table th, .cc-table td{ padding:12px 14px; border-bottom:1px solid var(--cc-border); text-align:center; }
+.cc-table thead th{ position:sticky; top:0; background:#111827; color:#fff; font-weight:600; font-size:.75rem; letter-spacing:.05em; text-transform:uppercase; }
+.cc-feature-col{ text-align:left !important; width:30%; font-size:.72rem; letter-spacing:.05em; }
+.cc-table tbody th{ text-align:left; font-weight:600; background:#f9fafb; font-size:.8rem; }
+
+.cc-table td.yes{ color:var(--cc-yes); font-weight:600; }
+.cc-table td.partial{ color:var(--cc-partial); font-weight:600; }
+.cc-table td.no{ color:var(--cc-no); opacity:.6; }
+
+.cc-legend{ display:flex; gap:18px; flex-wrap:wrap; font-size:.7rem; margin:16px 4px 40px; color:var(--cc-muted); }
+.cc-legend strong{ font-weight:600; }
+
+.cc-advantages{ margin-top:50px; background:#f9fafb; border:1px solid var(--cc-border); border-radius:var(--cc-radius); padding:24px 26px; }
+.cc-subhead{ margin:0 0 16px; font-size:1.05rem; font-weight:600; }
+.cc-adv-list{ margin:0; padding-left:1.2em; font-size:.9rem; line-height:1.55; color:var(--cc-muted); }
+.cc-adv-list li{ margin:.5em 0; }
+
+/* Mobile cards */
+.cc-mobile-cards{ display:none; margin-top:56px; }
+.cc-mobile-card{ border:1px solid var(--cc-border); border-radius:var(--cc-radius); padding:16px 16px 14px; background:#fff; margin-bottom:16px; }
+.cc-mobile-card h4{ margin:0 0 10px; font-size:.95rem; }
+.cc-mobile-card ul{ margin:0; padding-left:1.1em; font-size:.8rem; line-height:1.5; color:var(--cc-muted); }
+.cc-mobile-card li{ margin:.35em 0; }
+
+@media (max-width: 900px){
+  .cc-table-container{ display:none; }
+  .cc-mobile-cards{ display:block; }
+  .cc-section{ padding-top:var(--cc-pad); }
+}
+
+@media (max-width:600px){
+  .cc-title{ font-size: clamp(1.4rem,5.5vw,1.9rem); }
+  .cc-intro{ font-size:.95rem; }
+  .cc-adv-list{ font-size:.85rem; }
+}
