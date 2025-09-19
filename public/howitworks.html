@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>How It Works — Kintsugi Global</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <style>
+    /* minimal reset */
+    html { line-height: 1.15; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; color:#0d1117; background:#ffffff; }
+    *,*::before,*::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+    :root{
+      --border:#e5e7eb;
+      --muted:#445066;
+      --maxw:1100px;
+      --xpad: clamp(32px, 5vw, 64px);
+      --radius:12px;
+    }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: var(--xpad) 20px; }
+    .eyebrow { letter-spacing:.08em; text-transform:uppercase; font-size:.75rem; color:var(--muted); margin:0 0 6px; }
+    .headline { margin:0 0 16px; font-size: clamp(1.5rem, 2.8vw, 2rem); line-height:1.2; font-weight:700; }
+
+    .grid { display:grid; gap:12px; margin-top: 12px; }
+    .card {
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:#fff;
+      padding:14px 16px;
+    }
+    .card h3 { margin:0 0 6px; font-size:1rem; font-weight:700; }
+    .card p { margin:0; color:var(--muted); line-height:1.55; font-size:.95rem; }
+
+    .steps { display:grid; gap:12px; margin-top: 12px; }
+    @media (min-width: 880px){ .steps { grid-template-columns: repeat(5, 1fr); } }
+
+    .step .num { font-weight:700; margin-right:8px; }
+    .moats h3 { margin:0 0 8px; }
+    .moats ul { margin:0; padding-left:1.1em; color:var(--muted); line-height:1.55; font-size:.95rem; }
+    .moats li { margin:.3em 0; }
+  </style>
+</head>
+<body>
+
+  <section id="how-it-works">
+    <div class="wrap">
+      <p class="eyebrow">How It Works</p>
+      <h2 class="headline">The Artist-Driven Flywheel</h2>
+
+      <!-- Steps -->
+      <div class="steps">
+        <article class="card step">
+          <h3><span class="num">1.</span>Discovery</h3>
+          <p>Artists featured in curated magazines and manga content</p>
+        </article>
+        <article class="card step">
+          <h3><span class="num">2.</span>Community Building</h3>
+          <p>Fans engage directly through social hubs</p>
+        </article>
+        <article class="card step">
+          <h3><span class="num">3.</span>Audience Development</h3>
+          <p>Meaningful connections drive loyalty and understanding</p>
+        </article>
+        <article class="card step">
+          <h3><span class="num">4.</span>Crowdfunding Launch</h3>
+          <p>Engaged communities support artist-led campaigns</p>
+        </article>
+        <article class="card step">
+          <h3><span class="num">5.</span>Success &amp; Growth</h3>
+          <p>Revenue sharing and long-term IP partnerships</p>
+        </article>
+      </div>
+
+      <!-- Competitive Moats -->
+      <div class="grid" style="margin-top:16px;">
+        <article class="card moats">
+          <h3>Competitive Moats</h3>
+          <ul>
+            <li><strong>Network Effects:</strong> More artists → more content → more fans</li>
+            <li><strong>Lock-in Effects:</strong> More fans → better data → superior creator tools → better funding opportunities</li>
+            <li><strong>Brand Partnerships:</strong> Exclusive artist relationships with dedicated audiences</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
