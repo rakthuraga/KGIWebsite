@@ -378,24 +378,37 @@
       
       /* Section Spacing Fixes */
       .section-embed {
-        margin: 0;
-        padding: 0;
+        margin: 0 !important;
+        padding: 0 !important;
       }
       
       .section-embed iframe {
-        margin: 0;
-        padding: 0;
-        display: block;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        border: none !important;
       }
       
       /* Remove default spacing between sections */
       .section-embed + .section-embed {
-        margin-top: 0;
+        margin-top: 0 !important;
+      }
+      
+      /* Ensure no body margins affect sections */
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
       }
       
       /* Footer spacing */
       footer {
-        margin-top: 0;
+        margin-top: 0 !important;
+      }
+      
+      /* Remove any default section margins */
+      section {
+        margin: 0 !important;
+        padding: 0 !important;
       }
       
       /* Responsive Design */
