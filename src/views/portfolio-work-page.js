@@ -20,33 +20,7 @@ const PortfolioWorkPage = (props) => {
         <title>KGI Corporate</title>
       </Helmet>
       <div className="portfolio-work-page-portfolio-work-page">
-        <nav className="portfolio-work-page-navigation-bar" role="navigation">
-          <img
-            alt="KGIcorporatelogoI313"
-            src="/logo.png"
-            className="portfolio-work-page-sitelogo"
-          />
-          {/* Desktop nav links */}
-          <div className="portfolio-desktop-menu">
-            {navLinks.map((item, i) => (
-              <span key={item.label + i} className={`${item.className} Navigation`}>
-                {item.label}
-              </span>
-            ))}
-          </div>
-          {/* Hamburger for mobile */}
-          <button
-            className={`portfolio-hamburger${menuOpen ? ' open' : ''}`}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            aria-controls="main-nav-menu"
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </button>
-        </nav>
+        
         {/* Fullscreen overlay menu */}
         {menuOpen && (
           <div className="portfolio-fullscreen-menu" id="main-nav-menu" role="menu">
