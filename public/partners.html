@@ -169,9 +169,39 @@
       <!-- CTA -->
       <div class="cta">
         <p>Interested in partnering with Kintsugi Global?</p>
-        <a class="btn" href="mailto:ron@kintsugi.global">Partner With Us</a>
-
+        <a class="btn primary" id="show-partner-form-btn">Partner With Us</a>
       </div>
+      <div id="partner-form-section" style="display:none; margin-top:18px;">
+              <form onsubmit="return false" aria-label="Partner application" method="post" action="#" style="background:#f9fafb; border:1px solid var(--border); border-radius:14px; padding:40px 32px; box-shadow:0 2px 12px rgba(0,0,0,.04); max-width:800px; width:300%;">
+                <input type="hidden" name="audience" value="partner">
+                <input type="hidden" name="intent" value="apply">
+                <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:22px; color:#DF1824;">Apply as Partner</h2>
+                <div style="display:flex; flex-direction:column; gap:22px;">
+                  <label for="pr1-name" style="font-weight:600; margin-bottom:4px;">Name</label>
+                  <input id="pr1-name" name="name" type="text" placeholder="Full name" required style="padding:16px 18px; border:1px solid var(--border); border-radius:8px; font-size:1.1rem;">
+                  
+                  <label for="pr1-email" style="font-weight:600; margin-bottom:4px;">Email</label>
+                  <input id="pr1-email" name="email" type="email" placeholder="you@example.com" required style="padding:16px 18px; border:1px solid var(--border); border-radius:8px; font-size:1.1rem;">
+                  
+                  <label for="pr1-org" style="font-weight:600; margin-bottom:4px;">Organization</label>
+                  <input id="pr1-org" name="organization" type="text" placeholder="Company or group name" style="padding:16px 18px; border:1px solid var(--border); border-radius:8px; font-size:1.1rem;">
+                  
+                  <label for="pr1-link" style="font-weight:600; margin-bottom:4px;">Website / Social</label>
+                  <input id="pr1-link" name="link" type="url" placeholder="https://..." style="padding:16px 18px; border:1px solid var(--border); border-radius:8px; font-size:1.1rem;">
+                  
+                  <button type="submit" class="sub-f-btn" style="margin-top:14px; background:#DF1824; color:#fff; font-weight:700; font-size:1.15rem; border:none; border-radius:8px; padding:18px 0; cursor:pointer; transition:background .2s;">Apply as Partner</button>
+                </div>
+              </form>
+              <hr style="margin:22px 0; border:none; height:1px; background:var(--border, #e5e7eb); opacity:.7;">
+            </div>
+        <script>
+          document.getElementById('show-partner-form-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                var formSection = document.getElementById('partner-form-section');
+                // Toggle partner form  
+                formSection.style.display = (formSection.style.display === 'none' || formSection.style.display === '') ? 'block' : 'none';
+              });
+        </script>
     </div>
   </section>
 
