@@ -48,46 +48,44 @@
   <div class="container">
     <header class="page" aria-label="CTA hub header">
       <div class="eyebrow">Get Involved</div>
-      <h1>Pick your path — creators, fans, partners, investors</h1>
+      <h1>Contact With Us</h1>
       <p class="lede">Quick links and forms to take action right now.</p>
     </header>
 
 <!-- Role-specific sign-up blocks (two cards in a row: Artists & Fans) -->
 <section class="block">
     <div class="grid two-col">
-        <!-- Artists (col 1) -->
-        <article id="artists" class="card" aria-labelledby="artists-h">
-            <span class="tag">For Artists</span>
-            <h2 id="artists-h">Join Our Creator Community</h2>
-            <p>Operate like a one-person studio with community, tools, and funding.</p>
-
-            <!-- 1) Apply as Creator -->
-            <form onsubmit="return false" aria-label="Artist application" method="post" action="#">
-                <input type="hidden" name="audience" value="artist">
-                <input type="hidden" name="intent" value="apply">
-                <label for="ar1-name">Name</label>
-                <input id="ar1-name" name="name" type="text" placeholder="Full name" required>
-                <label for="ar1-email">Email</label>
-                <input id="ar1-email" name="email" type="email" placeholder="you@example.com" required>
-                <label for="ar1-link">Portfolio / Social</label>
-                <input id="ar1-link" name="link" type="url" placeholder="https://...">
-                <button type="submit" class="sub-f-btn">Apply as Creator</button>
-            </form>
-
-            <hr style="margin:12px 0; border:none; height:1px; background:var(--border, #e5e7eb); opacity:.7;">
-
-            <!-- 2) Get Early Access -->
-            <form onsubmit="return false" aria-label="Artist early access" method="post" action="#">
-                <input type="hidden" name="audience" value="artist">
-                <input type="hidden" name="intent" value="early-access">
-                <label for="ar2-name">Name</label>
-                <input id="ar2-name" name="name" type="text" placeholder="Full name" required>
-                <label for="ar2-email">Email</label>
-                <input id="ar2-email" name="email" type="email" placeholder="you@example.com" required>
-                <button type="submit" class="sub-f-btn">Get Early Access</button>
-            </form>
+        <!-- Investor (col 1) -->
+        <article id="investors" class="card" aria-labelledby="investors-h">
+          <span class="tag">For Investors</span>
+          <h2 id="investors-h">Request Investor Materials</h2>
+          <p>$2M seed details, use of proceeds, and validation stats.</p>
+          <!-- 1) Request Deck -->
+          <form onsubmit="return false" aria-label="Investor deck request" method="post" action="#">
+              <input type="hidden" name="audience" value="investor">
+              <input type="hidden" name="intent" value="deck">
+              <label for="in1-name">Name</label>
+              <input id="in1-name" name="name" type="text" placeholder="Full name" required>
+              <label for="in1-email">Email</label>
+              <input id="in1-email" name="email" type="email" placeholder="you@fund.com" required>
+              <label for="in1-firm">Firm</label>
+              <input id="in1-firm" name="firm" type="text" placeholder="Fund / Family Office">
+              <button type="submit" class="sub-f-btn">Request Deck</button>
+          </form>
+          <hr style="margin:12px 0; border:none; height:1px; background:var(--border, #e5e7eb); opacity:.7;">
+          <!-- 2) Request a Call -->
+          <form onsubmit="return false" aria-label="Investor call request" method="post" action="#">
+              <input type="hidden" name="audience" value="investor">
+              <input type="hidden" name="intent" value="call">
+              <label for="in2-name">Name</label>
+              <input id="in2-name" name="name" type="text" placeholder="Full name" required>
+              <label for="in2-email">Email</label>
+              <input id="in2-email" name="email" type="email" placeholder="you@fund.com" required>
+              <label for="in2-firm">Firm</label>
+              <input id="in2-firm" name="firm" type="text" placeholder="Fund / Family Office">
+              <button type="submit" class="sub-f-btn">Request a Call</button>
+          </form>
         </article>
-
         <!-- Fans (col 2) -->
         <article id="fans" class="card" aria-labelledby="fans-h">
             <span class="tag">For Fans</span>
@@ -116,81 +114,6 @@
         </article>
     </div>
 </section>
-
-<section class="block">
-    <div class="grid two-col">
-        <!-- Investors (col 1) -->
-        <article id="investors" class="card" aria-labelledby="investors-h">
-            <span class="tag">For Investors</span>
-            <h2 id="investors-h">Request Investor Materials</h2>
-            <p>$2M seed details, use of proceeds, and validation stats.</p>
-
-            <!-- 1) Request Deck -->
-            <form onsubmit="return false" aria-label="Investor deck request" method="post" action="#">
-                <input type="hidden" name="audience" value="investor">
-                <input type="hidden" name="intent" value="deck">
-                <label for="in1-name">Name</label>
-                <input id="in1-name" name="name" type="text" placeholder="Full name" required>
-                <label for="in1-email">Email</label>
-                <input id="in1-email" name="email" type="email" placeholder="you@fund.com" required>
-                <label for="in1-firm">Firm</label>
-                <input id="in1-firm" name="firm" type="text" placeholder="Fund / Family Office">
-                <button type="submit" class="sub-f-btn">Request Deck</button>
-            </form>
-
-            <hr style="margin:12px 0; border:none; height:1px; background:var(--border, #e5e7eb); opacity:.7;">
-
-            <!-- 2) Request a Call -->
-            <form onsubmit="return false" aria-label="Investor call request" method="post" action="#">
-                <input type="hidden" name="audience" value="investor">
-                <input type="hidden" name="intent" value="call">
-                <label for="in2-name">Name</label>
-                <input id="in2-name" name="name" type="text" placeholder="Full name" required>
-                <label for="in2-email">Email</label>
-                <input id="in2-email" name="email" type="email" placeholder="you@fund.com" required>
-                <label for="in2-firm">Firm</label>
-                <input id="in2-firm" name="firm" type="text" placeholder="Fund / Family Office">
-                <button type="submit" class="sub-f-btn">Request a Call</button>
-            </form>
-        </article>
-
-        <!-- Partners (col 2) -->
-        <article id="partners-cta" class="card" aria-labelledby="partners-h">
-            <span class="tag">For Partners</span>
-            <h2 id="partners-h">Partner With Us</h2>
-            <p>Collaborate on launches, activations, and data-backed audience growth.</p>
-
-            <!-- 1) Partnership Inquiry -->
-            <form onsubmit="return false" aria-label="Partnership inquiry" method="post" action="#">
-                <input type="hidden" name="audience" value="partner">
-                <input type="hidden" name="intent" value="inquiry">
-                <label for="pa1-name">Full Name</label>
-                <input id="pa1-name" name="name" type="text" placeholder="Jane Doe" required>
-                <label for="pa1-company">Company</label>
-                <input id="pa1-company" name="company" type="text" placeholder="Company LLC">
-                <label for="pa1-email">Email</label>
-                <input id="pa1-email" name="email" type="email" placeholder="you@company.com" required>
-                <label for="pa1-message">Your Message</label>
-                <textarea id="pa1-message" name="message" placeholder="Tell us what you have in mind…"></textarea>
-                <button type="submit" class="sub-f-btn">Send Inquiry</button>
-            </form>
-
-            <hr style="margin:12px 0; border:none; height:1px; background:var(--border, #e5e7eb); opacity:.7;">
-
-            <!-- 2) Request a Call -->
-            <form onsubmit="return false" aria-label="Partner call request" method="post" action="#">
-                <input type="hidden" name="audience" value="partner">
-                <input type="hidden" name="intent" value="call">
-                <label for="pa2-name">Full Name</label>
-                <input id="pa2-name" name="name" type="text" placeholder="Jane Doe" required>
-                <label for="pa2-email">Email</label>
-                <input id="pa2-email" name="email" type="email" placeholder="you@company.com" required>
-                <button type="submit" class="sub-f-btn">Request a Call</button>
-            </form>
-        </article>
-    </div>
-</section>
-
 
     <!-- Additional CTAs (#18) -->
     <section id="newsletter" class="block card" aria-labelledby="newsletter-h">
