@@ -53,33 +53,151 @@
         <p class="lede">Kintsugi Global is the all-in-one creator economy platform enabling anime and manga artists to operate as one-person studios. Backed by Japan's national DigiDen initiative, we're positioned to lead the global distribution of Japanese creative IP.</p>
         
         <div class="cta">
-          <button class="btn primary">Join as Creator</button>
-          <button class="btn secondary">Explore Content</button>
-          <button class="btn secondary">Partner With Us</button>
+            <a class="btn primary" id="show-creator-form-btn">Join as Creator</a>
+            <a class="btn secondary" href="content.html" target="_blank" rel="noopener">Explore Content</a>
+            <a class="btn secondary" id="show-partner-form-btn">Partner With Us</a>
+            <div id="creator-form-section" style="display:none; margin-top:18px;">
+              <form onsubmit="return false" aria-label="Artist application" method="post" action="#" style="background:#f9fafb; border:1px solid var(--border); border-radius:14px; padding:40px 32px; box-shadow:0 2px 12px rgba(0,0,0,.04); max-width:800px; width:300%;">
+              <input type="hidden" name="audience" value="artist">
+              <input type="hidden" name="intent" value="apply">
+              <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:22px; color:#DF1824;">Apply as Creator</h2>
+              <div style="display:flex; flex-direction:column; gap:22px;">
+              <label for="ar1-name" style="font-weight:600; margin-bottom:4px;">Name</label>
+              <input id="ar1-name" name="name" type="text" placeholder="Full name" required style="padding:16px 18px; border:1px solid var(--border); border-radius:8px; font-size:1.1rem;">
+              
+              <label for="ar1-email" style="font-weight:600; margin-bottom:4px;">Email</label>
+              <input id="ar1-email" name="email" type="email" placeholder="you@example.com" required style="padding:16px 18px; border:1px solid var(--border); border-radius:8px; font-size:1.1rem;">
+              
+              <label for="ar1-link" style="font-weight:600; margin-bottom:4px;">Portfolio / Social</label>
+              <input id="ar1-link" name="link" type="url" placeholder="https://..." style="padding:16px 18px; border:1px solid var(--border); border-radius:8px; font-size:1.1rem;">
+              
+              <button type="submit" class="sub-f-btn" style="margin-top:14px; background:#DF1824; color:#fff; font-weight:700; font-size:1.15rem; border:none; border-radius:8px; padding:18px 0; cursor:pointer; transition:background .2s;">Join as Creator</button>
+              </div>
+              </form>
+              <hr style="margin:22px 0; border:none; height:1px; background:var(--border, #e5e7eb); opacity:.7;">
+            </div>
+            <div id="partner-form-section" style="display:none; margin-top:18px;">
+              <form onsubmit="return false" aria-label="Partner application" method="post" action="#" style="background:#f9fafb; border:1px solid var(--border); border-radius:14px; padding:40px 32px; box-shadow:0 2px 12px rgba(0,0,0,.04); max-width:800px; width:300%;">
+                <input type="hidden" name="audience" value="partner">
+                <input type="hidden" name="intent" value="apply">
+                <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:22px; color:#DF1824;">Apply as Partner</h2>
+                <div style="display:flex; flex-direction:column; gap:22px;">
+                  <label for="pr1-name" style="font-weight:600; margin-bottom:4px;">Name</label>
+                  <input id="pr1-name" name="name" type="text" placeholder="Full name" required style="padding:16px 18px; border:1px solid var(--border); border-radius:8px; font-size:1.1rem;">
+                  
+                  <label for="pr1-email" style="font-weight:600; margin-bottom:4px;">Email</label>
+                  <input id="pr1-email" name="email" type="email" placeholder="you@example.com" required style="padding:16px 18px; border:1px solid var(--border); border-radius:8px; font-size:1.1rem;">
+                  
+                  <label for="pr1-org" style="font-weight:600; margin-bottom:4px;">Organization</label>
+                  <input id="pr1-org" name="organization" type="text" placeholder="Company or group name" style="padding:16px 18px; border:1px solid var(--border); border-radius:8px; font-size:1.1rem;">
+                  
+                  <label for="pr1-link" style="font-weight:600; margin-bottom:4px;">Website / Social</label>
+                  <input id="pr1-link" name="link" type="url" placeholder="https://..." style="padding:16px 18px; border:1px solid var(--border); border-radius:8px; font-size:1.1rem;">
+                  
+                  <button type="submit" class="sub-f-btn" style="margin-top:14px; background:#DF1824; color:#fff; font-weight:700; font-size:1.15rem; border:none; border-radius:8px; padding:18px 0; cursor:pointer; transition:background .2s;">Apply as Partner</button>
+                </div>
+              </form>
+              <hr style="margin:22px 0; border:none; height:1px; background:var(--border, #e5e7eb); opacity:.7;">
+            </div>
+            <script>
+                document.getElementById('show-creator-form-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                var creatorForm = document.getElementById('creator-form-section');
+                var partnerForm = document.getElementById('partner-form-section');
+                // If partner form is open, close it
+                if (partnerForm.style.display === 'block') {
+                  partnerForm.style.display = 'none';
+                }
+                // Toggle creator form
+                creatorForm.style.display = (creatorForm.style.display === 'none' || creatorForm.style.display === '') ? 'block' : 'none';
+                });
+              document.getElementById('show-partner-form-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                var formSection = document.getElementById('partner-form-section');
+                var creatorForm = document.getElementById('creator-form-section');
+                // If creator form is open, close it
+                if (creatorForm.style.display === 'block') {
+                  creatorForm.style.display = 'none';
+                }
+                // Toggle partner form  
+                formSection.style.display = (formSection.style.display === 'none' || formSection.style.display === '') ? 'block' : 'none';
+              });
+            </script>
         </div>
-        
-        <div class="stats">
-          <a class="stat"
-             href="https://piracymonitor.org/japan-piracy-rate-exceeds-%C2%A52-trillion-in-2022-according-to-pwc-study-for-coda/?utm_source=chatgpt.com"
-             target="_blank" rel="noopener noreferrer"
-             style="color:#0d1117;text-decoration:none;">
-            <strong>$15.5B+ piracy market</strong>
-            <span>Global anime piracy we are capturing</span>
-          </a>
-      
-          <a class="stat"
-             href="https://finance.yahoo.com/news/unstoppable-backs-anime-dns-registration-173000871.html?utm_source=chatgpt.com"
-             target="_blank" rel="noopener noreferrer"
-             style="color:#0d1117;text-decoration:none;">
-            <strong>Selected for Japan’s DigiDen initiative</strong>
-            <span>Japan’s prestigious national initiative</span>
-          </a>
-      
-          <div class="stat">
-            <strong>35+ artist LOIs</strong>
-            <span>Validated pipeline across anime/manga creators</span>
+
+        <section class="impact-stats">
+          <div class="stats-row">
+            <div class="stat stat--label">
+              <div class="label">Our Global Creative Impact</div>
+            </div>
+          
+            <div class="stat">
+              <a href="https://piracymonitor.org/japan-piracy-rate-exceeds-%C2%A52-trillion-in-2022-according-to-pwc-study-for-coda/?utm_source=chatgpt.com" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+              <div class="value">$15.5&nbsp;Billion&nbsp;+</div>
+              </a>
+              <div class="caption">Global anime piracy we are capturing</div>
+            </div>
+          
+            <div class="stat">
+              <a href="https://finance.yahoo.com/news/unstoppable-backs-anime-dns-registration-173000871.html?utm_source=chatgpt.com" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+              <div class="value">Selected</div>
+              </a>
+              <div class="caption">Japan’s prestigious national initiative</div>
+            </div>
+          
+            <div class="stat">
+              <div class="value">35+ LOIs</div>
+              <div class="caption">Validated pipeline across anime/manga creators</div>
+            </div>
           </div>
-        </div>
+        </section>
+        
+        <style>
+          /* removed background “box” */
+          .impact-stats{ padding:0; background:none; border-radius:0; margin-top: 40px; }
+        
+          .stats-row{
+            display:flex;
+            align-items:stretch;     /* let columns match tallest column */
+            gap:10px;                /* requested spacing */
+            flex-wrap:nowrap;
+          }
+        
+          .stat{ min-width:200px; }
+        
+          .stat--label{
+            min-width:210px;
+            display:flex;            /* stretch the label full height */
+          }
+        
+          .label{
+            display:flex;
+            align-items:center;      /* vertically center inside full column height */
+            white-space:normal;      /* allow wrapping instead of one long line */
+            font-weight:700;
+            font-size:1.10rem;
+            color:#6b7280;
+            line-height:1.35;
+          }
+        
+          .value{
+            font-size:1.4rem;        /* requested size */
+            font-weight:800;
+            line-height:1.1;
+            color:#2563eb;
+            margin-bottom:6px;
+            white-space:nowrap;
+          }
+          .caption{
+            font-size:0.97rem;
+            color:#5b677c;
+          }
+        
+          @media (max-width:900px){
+            .stats-row{flex-wrap:wrap}
+            .stat--label{flex-basis:100%; min-width:unset}
+          }
+        </style>
       </div>
       <div class="visual" style="width:100%; max-width:620px; margin-left:200px;">
         <img src="land-bg-1.png" alt="Abstract Web3 and anime community interaction visual" style="display:block; width:100%; height:auto; border-radius:16px;" />
