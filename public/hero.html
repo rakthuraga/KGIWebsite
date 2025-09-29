@@ -125,79 +125,44 @@
             </script>
         </div>
 
-        <section class="impact-stats">
+        <section class="impact-stats" aria-label="Key statistics">
           <div class="stats-row">
-            <div class="stat stat--label">
+            <div class="stat stat--label" aria-hidden="true">
               <div class="label">Our Global Creative Impact</div>
             </div>
-          
-            <div class="stat">
-              <a href="https://piracymonitor.org/japan-piracy-rate-exceeds-%C2%A52-trillion-in-2022-according-to-pwc-study-for-coda/?utm_source=chatgpt.com" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
-              <div class="value">$15.5&nbsp;Billion&nbsp;+</div>
-              </a>
-              <div class="caption">Global anime piracy we are capturing</div>
-            </div>
-          
-            <div class="stat">
-              <a href="https://finance.yahoo.com/news/unstoppable-backs-anime-dns-registration-173000871.html?utm_source=chatgpt.com" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
-              <div class="value">Selected</div>
-              </a>
-              <div class="caption">Japan’s prestigious national initiative</div>
-            </div>
-          
-            <div class="stat">
-              <div class="value">35+ LOIs</div>
-              <div class="caption">Validated pipeline across anime/manga creators</div>
-            </div>
+        
+            <article class="stat" role="group" aria-label="Artists Empowered">
+              <h3 class="value">6,500+</h3>
+              <p class="caption">Artists Empowered</p>
+            </article>
+        
+            <article class="stat" role="group" aria-label="Funds Raised">
+              <h3 class="value">$3.2M</h3>
+              <p class="caption">Funds Raised</p>
+            </article>
+        
+            <article class="stat" role="group" aria-label="Audience Growth">
+              <h3 class="value">289%</h3>
+              <p class="caption">Audience Growth</p>
+            </article>
           </div>
-        </section>
-        
-        <style>
-          /* removed background “box” */
-          .impact-stats{ padding:0; background:none; border-radius:0; margin-top: 40px; }
-        
-          .stats-row{
-            display:flex;
-            align-items:stretch;     /* let columns match tallest column */
-            gap:10px;                /* requested spacing */
-            flex-wrap:nowrap;
-          }
-        
-          .stat{ min-width:200px; }
-        
-          .stat--label{
-            min-width:210px;
-            display:flex;            /* stretch the label full height */
-          }
-        
-          .label{
-            display:flex;
-            align-items:center;      /* vertically center inside full column height */
-            white-space:normal;      /* allow wrapping instead of one long line */
-            font-weight:700;
-            font-size:1.10rem;
-            color:#6b7280;
-            line-height:1.35;
-          }
-        
-          .value{
-            font-size:1.4rem;        /* requested size */
-            font-weight:800;
-            line-height:1.1;
-            color:#2563eb;
-            margin-bottom:6px;
-            white-space:nowrap;
-          }
-          .caption{
-            font-size:0.97rem;
-            color:#5b677c;
-          }
-        
-          @media (max-width:900px){
-            .stats-row{flex-wrap:wrap}
-            .stat--label{flex-basis:100%; min-width:unset}
-          }
-        </style>
+          <style>
+            .impact-stats{ padding:0; background:none; margin-top:40px; }
+            .impact-stats .stats-row{ display:flex; gap:12px; align-items:stretch; flex-wrap:nowrap; }
+            .impact-stats .stat{
+              border:1px solid var(--border); border-radius:12px; background:#fff;
+              padding:18px 20px; flex:1; display:flex; align-items:center; min-width:220px;
+            }
+            .impact-stats .stat--label{ flex:1.2; min-width:210px; }
+            .impact-stats .label{ font-weight:700; font-size:1.05rem; color:#6b7280; line-height:1.35; }
+            .impact-stats .value{ font-size:clamp(1.25rem, 2.1vw, 1.6rem); font-weight:800; line-height:1.1; margin:0 0 6px; color:#2563eb; white-space:nowrap; }
+            .impact-stats .caption{ margin:0; font-size:.98rem; color:#5b677c; }
+            .impact-stats .stat:hover{ box-shadow:0 10px 24px rgba(0,0,0,.06); transform:translateY(-1px); transition:all .12s ease; }
+          
+            @media (max-width:980px){
+              .visual{ margin-left:0 !important; }
+            }
+          </style>          
       </div>
       <div class="visual" style="width:100%; max-width:620px; margin-left:200px;">
         <img src="land-bg-1.png" alt="Abstract Web3 and anime community interaction visual" style="display:block; width:100%; height:auto; border-radius:16px;" />

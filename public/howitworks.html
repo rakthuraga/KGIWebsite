@@ -6,87 +6,141 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
-  <style>
-    /* minimal reset */
+    <style>
     html { line-height: 1.15; }
     body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; color:#0d1117; background:#ffffff; }
     *,*::before,*::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
     :root{
-      --border:#e5e7eb;
-      --muted:#445066;
-      --maxw:1100px;
-      --xpad: clamp(32px, 5vw, 64px);
-      --radius:12px;
+        --border:#e5e7eb;
+        --muted:#445066;
+        --maxw:1100px;
+        --xpad: clamp(32px, 5vw, 64px);
+        --radius:12px;
     }
 
     .wrap { max-width: var(--maxw); margin: 0 auto; padding: var(--xpad) 20px; }
     .eyebrow { letter-spacing:.08em; text-transform:uppercase; font-size:.75rem; color:var(--muted); margin:0 0 6px; }
     .headline { margin:0 0 16px; font-size: clamp(1.5rem, 2.8vw, 2rem); line-height:1.2; font-weight:700; }
 
-    .grid { display:grid; gap:12px; margin-top: 12px; }
+    /* Generic card + grid (used by Competitive Moats) */
+    .grid { display:grid; gap:12px; margin-top: 16px; }
     .card {
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      background:#fff;
-      padding:14px 16px;
+        border:1px solid var(--border);
+        border-radius:var(--radius);
+        background:#fff;
+        padding:14px 16px;
     }
-    .card h3 { margin:0 0 6px; font-size:1rem; font-weight:700; }
+    .card h3 { margin:0 0 8px; font-size:1rem; font-weight:700; }
     .card p { margin:0; color:var(--muted); line-height:1.55; font-size:.95rem; }
-
-    .steps { display:grid; gap:12px; margin-top: 12px; }
-    @media (min-width: 880px){ .steps { grid-template-columns: repeat(5, 1fr); } }
-
-    .step .num { font-weight:700; margin-right:8px; }
-    .moats h3 { margin:0 0 8px; }
     .moats ul { margin:0; padding-left:1.1em; color:var(--muted); line-height:1.55; font-size:.95rem; }
     .moats li { margin:.3em 0; }
-  </style>
+
+    .flywheel{
+        position: relative;
+        width: 100%;
+        max-width: 980px;
+        margin: 18px auto 0;
+        aspect-ratio: 16 / 9;
+        min-height: 440px;
+    }
+    .flywheel .ring{
+        position:absolute; inset:0;
+        width:100%; height:100%;
+    }
+
+    .node{
+        position:absolute;
+        width:min(280px, 34%);
+        background:#0B66A3;         
+        color:#fff;
+        border-radius:14px;
+        padding:14px 16px;
+        box-shadow: 0 8px 24px rgba(0,0,0,.08);
+        border:1px solid rgba(255,255,255,.18);
+    }
+    .node h3{ margin:0 0 6px; font-size:1rem; font-weight:800; }
+    .node h3 span{ opacity:.9; margin-right:.25rem; }
+    .node p{ margin:0; font-size:.92rem; line-height:1.45; }
+
+    /* Position each node around the ring */
+    .node-1{ top: 8%;  left: 34%; transform: translate(-50%,0); }
+    .node-2{ top: 28%; right: 1%; }
+    .node-3{ bottom: 12%; right: 20%; }
+    .node-4{ bottom: 12%; left: 20%; }
+    .node-5{ top: 28%; left: 1%; }
+
+    /* Mobile fallback: stack cards */
+    @media (max-width: 860px){
+        .flywheel{ min-height: unset; aspect-ratio:auto; }
+        .flywheel .ring{ display:none; }
+        .node{
+        position:static; width:100%;
+        background:#fff; color:#0d1117;
+        border:1px solid var(--border); box-shadow:none;
+        margin-bottom:12px;
+        }
+        .node p{ color:#445066; }
+    }
+    </style>
+
 </head>
 <body>
-
-  <section id="how-it-works">
-    <div class="wrap">
-      <p class="eyebrow">How It Works</p>
-      <h2 class="headline">The Artist-Driven Flywheel</h2>
-
-      <!-- Steps -->
-      <div class="steps">
-        <article class="card step">
-          <h3><span class="num">1.</span>Discovery</h3>
-          <p>Artists featured in curated magazines and manga content</p>
-        </article>
-        <article class="card step">
-          <h3><span class="num">2.</span>Community Building</h3>
-          <p>Fans engage directly through social hubs</p>
-        </article>
-        <article class="card step">
-          <h3><span class="num">3.</span>Audience Development</h3>
-          <p>Meaningful connections drive loyalty and understanding</p>
-        </article>
-        <article class="card step">
-          <h3><span class="num">4.</span>Crowdfunding Launch</h3>
-          <p>Engaged communities support artist-led campaigns</p>
-        </article>
-        <article class="card step">
-          <h3><span class="num">5.</span>Success &amp; Growth</h3>
-          <p>Revenue sharing and long-term IP partnerships</p>
-        </article>
-      </div>
-
-      <!-- Competitive Moats -->
-      <div class="grid" style="margin-top:16px;">
-        <article class="card moats">
-          <h3>Competitive Moats</h3>
-          <ul>
-            <li><strong>Network Effects:</strong> More artists → more content → more fans</li>
-            <li><strong>Lock-in Effects:</strong> More fans → better data → superior creator tools → better funding opportunities</li>
-            <li><strong>Brand Partnerships:</strong> Exclusive artist relationships with dedicated audiences</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
+    <section id="how-it-works">
+        <div class="wrap">
+          <p class="eyebrow">How It Works</p>
+          <h2 class="headline">The Artist-Driven Flywheel</h2>
+      
+          <div class="flywheel" role="list" aria-label="Artist-driven flywheel">
+            <svg class="ring" viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#e5e7eb" stroke-width="8"/>
+              <defs>
+                <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" fill="#cbd5e1"></path>
+                </marker>
+              </defs>
+              <path d="M50,12 A38,38 0 0,1 84,34" fill="none" stroke="#cbd5e1" stroke-width="2" marker-end="url(#arrow)"/>
+              <path d="M88,50 A38,38 0 0,1 73,82" fill="none" stroke="#cbd5e1" stroke-width="2" marker-end="url(#arrow)"/>
+              <path d="M50,88 A38,38 0 0,1 27,83" fill="none" stroke="#cbd5e1" stroke-width="2" marker-end="url(#arrow)"/>
+              <path d="M12,50 A38,38 0 0,1 27,18" fill="none" stroke="#cbd5e1" stroke-width="2" marker-end="url(#arrow)"/>
+              <path d="M35,16 A38,38 0 0,1 50,12" fill="none" stroke="#cbd5e1" stroke-width="2" marker-end="url(#arrow)"/>
+            </svg>
+      
+            <!-- 5 nodes -->
+            <article class="node node-1" role="listitem" aria-label="1. Attract — Draw in anime fans">
+              <h3><span>1.</span> Attract</h3>
+              <p>Draw in anime fans</p>
+            </article>
+            <article class="node node-2" role="listitem" aria-label="2. Engage — Build personalized interactions and relationships">
+              <h3><span>2.</span> Engage</h3>
+              <p>Build personalized interactions and relationships</p>
+            </article>
+            <article class="node node-3" role="listitem" aria-label="3. Deliver — Provide exceptional experiences that exceed expectations">
+              <h3><span>3.</span> Deliver</h3>
+              <p>Provide exceptional experiences that exceed expectations</p>
+            </article>
+            <article class="node node-4" role="listitem" aria-label="4. Delight — Create memories that surprise customers and build lasting loyalty">
+              <h3><span>4.</span> Delight</h3>
+              <p>Create memories that surprise customers and build lasting loyalty</p>
+            </article>
+            <article class="node node-5" role="listitem" aria-label="5. Advocate — Transform customers into brand ambassadors">
+              <h3><span>5.</span> Advocate</h3>
+              <p>Transform customers into brand ambassadors</p>
+            </article>
+          </div>
+      
+          <div class="grid" style="margin-top:16px;" aria-label="Competitive moats">
+            <article class="card moats">
+              <h3>Competitive Moats</h3>
+              <ul>
+                <li><strong>Network Effects:</strong> More artists → more content → more fans</li>
+                <li><strong>Lock-in Effects:</strong> More fans → better data → superior creator tools → better funding opportunities</li>
+                <li><strong>Brand Partnerships:</strong> Exclusive artist relationships with dedicated audiences</li>
+              </ul>
+            </article>
+          </div>
+      
+        </div>
+      </section>      
 </body>
 </html>
