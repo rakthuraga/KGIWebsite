@@ -31,8 +31,9 @@
 
     /* service overview */
     .grid{ display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin-top: 20px; }
-    .svc{ border:1px solid var(--border); border-radius:var(--radius); background:#fff; padding:16px; display:grid; gap:12px; grid-template-columns: 92px 1fr; align-items:start; }
-    .svc .icon { width:92px; height:92px; border:1px solid var(--border); border-radius:10px; background: #f7f7f8 url('https://placehold.co/92x92?text=Icon') center/cover no-repeat; }
+    .svc{ border:1px solid var(--border); border-radius:var(--radius); background:#fff; padding:16px; display:grid; gap:12px; grid-template-columns: 100px 1fr; align-items:start; }
+    .svc .icon { width:100px; height:100px; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:#f7f7f8; }
+    .svc .icon img{ width:100%; height:100%; object-fit: cover; object-position: center; display:block; }
     .svc h3{ margin:0; font-size:1.05rem; }
     .svc p{ margin:6px 0 0; color:var(--muted); line-height:1.55; font-size:.95rem; }
     .svc ul{ margin:6px 0 0; padding-left:1.1em; color:var(--muted); }
@@ -58,7 +59,7 @@
   <div class="grid" aria-label="Service Overview">
     <!-- Sell Merchandise -->
     <article class="svc">
-      <div class="icon" aria-hidden="true"></div>
+      <div class="icon" aria-hidden="true"><img src="engagimg1.png" alt="Merchandise preview" /></div>
       <div class="copy">
         <h3>Sell Merchandise</h3>
         <p>Turn your art into products that sell. We handle printing, shipping, and customer service so you don’t have to. From posters to t-shirts to collectibles — you create, we take care of the rest.</p>
@@ -67,7 +68,7 @@
 
     <!-- Crowdfund Projects -->
     <article class="svc">
-      <div class="icon" aria-hidden="true"></div>
+      <div class="icon" aria-hidden="true"><img src="engagimg2.png" alt="Crowdfunding campaign visual" /></div>
       <div class="copy">
         <h3>Crowdfund Projects</h3>
         <p>Need funding for your manga or anime project? We help you run successful crowdfunding campaigns. We’ll guide you through setup, promotion, and delivering rewards to backers.</p>
@@ -76,7 +77,7 @@
 
     <!-- Market Your Work -->
     <article class="svc">
-      <div class="icon" aria-hidden="true"></div>
+      <div class="icon" aria-hidden="true"><img src="engagimg3.png" alt="Marketing content example" /></div>
       <div class="copy">
         <h3>Market Your Work</h3>
         <p>Get your art seen by more people. We manage your social media, create promotional content, and connect you with fans who love anime and manga. No marketing experience required.</p>
@@ -85,7 +86,7 @@
 
     <!-- Broadcast Content -->
     <article class="svc">
-      <div class="icon" aria-hidden="true"></div>
+      <div class="icon" aria-hidden="true"><img src="engagimg4.png" alt="Broadcast and streaming preview" /></div>
       <div class="copy">
         <h3>Broadcast Content</h3>
         <p>Stream your drawing process or host live events. We help you set up broadcasts, plan content, and build an audience. Share your creative journey with fans around the world.</p>
