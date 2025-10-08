@@ -1,26 +1,20 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import './style.css'
-import PortfolioWorkPage from './views/portfolio-work-page'
-import NotFound from './views/not-found'
+import './style.css';
+import PortfolioWorkPage from './views/portfolio-work-page';
+import NotFound from './views/not-found';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/KGIWebsite">
       <Switch>
-        <Route component={PortfolioWorkPage} exact path="/" />
-        <Route component={NotFound} path="**" />
-        <Redirect to="**" />
+        <Route exact path="/" component={PortfolioWorkPage} />
+        <Route path="*" component={NotFound} />
       </Switch>
     </Router>
-  )
-}
+  );
+};
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'));
