@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Market Opportunity — Kintsugi Global</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <style>
+    html { line-height: 1.15; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; color:#0d1117; background:#ffffff; }
+    *,*::before,*::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+    :root{
+      --border:#e5e7eb;
+      --muted:#445066;
+      --maxw:1100px;
+      --xpad: clamp(32px, 5vw, 64px);
+      --radius:12px;
+    }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: var(--xpad) 20px; }
+    .eyebrow { letter-spacing:.08em; text-transform:uppercase; font-size:.75rem; color:var(--muted); margin:0 0 6px; }
+    .headline { margin:0 0 16px; font-size: clamp(1.5rem, 2.8vw, 2rem); line-height:1.2; font-weight:700; }
+
+    .grid { display:grid; gap:16px; }
+    .card {
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:#fff;
+      padding:14px 16px;
+    }
+    .card h3 { margin:0 0 6px; font-size:1rem; font-weight:700; }
+    .card p { margin:0; color:var(--muted); line-height:1.55; font-size:.95rem; }
+
+    .quote {
+      border-left: 3px solid #0d1117;
+      padding-left: 12px;
+      margin-top: 8px;
+      color:#0d1117;
+      font-weight:600;
+    }
+
+    .visual { display:grid; gap:12px; }
+    @media (min-width: 880px){
+      .visual { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <section id="market">
+    <div class="wrap">
+      <p class="eyebrow">Market Opportunity</p>
+      <h2 class="headline">A $15B Opportunity in the Community-First Era</h2>
+
+      <div class="visual">
+        <article class="card">
+          <h3>Total Addressable Market</h3>
+          <p>$290B (Gaming + Anime + Creator Economy)</p>
+        </article>
+
+        <article class="card">
+          <h3>Serviceable Addressable Market</h3>
+          <p>$15B (Creator Economy + Anime + Gaming convergence)</p>
+        </article>
+
+        <article class="card">
+          <h3>Target Focus</h3>
+          <p>Underserved female-focused and gamer-centric IP markets ($12.5B opportunity)</p>
+        </article>
+
+        <article class="card">
+          <h3>Key Insight</h3>
+          <p class="quote">“Millennials and Gen Z expect direct Creator-Fan relationships”</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+

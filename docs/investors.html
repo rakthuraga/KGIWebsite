@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Investors — Kintsugi Global</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+
+  <style>
+    html { line-height: 1.15; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; color:#0d1117; background:#ffffff; }
+    *,*::before,*::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    img { display:block; max-width:100%; height:auto; }
+
+    :root{
+      --text:#0d1117;
+      --muted:#5b677c;
+      --border:#e5e7eb;
+      --bg:#ffffff;
+      --radius:12px;
+      --maxw:1100px;
+      --xpad: clamp(32px, 5vw, 64px);
+    }
+
+    .kg-investors{ background:var(--bg); color:var(--text); padding: var(--xpad) 20px; }
+    .container{ max-width:var(--maxw); margin:0 auto; }
+
+    .eyebrow{ letter-spacing:.08em; text-transform:uppercase; font-size:.75rem; color:var(--muted); margin:0 0 6px; }
+    .headline{ font-size: clamp(1.6rem, 3vw, 2.1rem); line-height:1.2; margin:0 0 10px; font-weight:700; }
+    .lede{ font-size:1rem; color:var(--muted); max-width:72ch; margin:0; }
+
+    /* logos */
+    .logos{ margin-top:20px; display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); align-items:center; }
+    .logo{ border:1px solid var(--border); border-radius:10px; background:#fff; padding:14px; display:flex; align-items:center; justify-content:center; min-height:84px; }
+
+    /* round details */
+    .round{ margin-top:24px; display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card{ border:1px solid var(--border); border-radius:var(--radius); background:#fff; padding:16px; }
+    .card h3{ margin:0 0 8px; font-size:1.05rem; font-weight:700; }
+    .kv{ margin:0; color:var(--muted); font-size:.95rem; line-height:1.55; }
+
+    /* proceeds */
+    .proceeds{ margin-top:24px; }
+    .proceeds h3{ margin:0 0 8px; font-size:1.05rem; }
+    .proceeds-grid{ display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .proceed-item{ border:1px solid var(--border); border-radius:var(--radius); background:#fff; padding:14px 16px; }
+    .proceed-item strong{ display:block; margin-bottom:4px; }
+    .proceed-item p{ margin:0; color:var(--muted); font-size:.95rem; line-height:1.55; }
+
+    /* validation */
+    .validation{ margin-top:24px; border:1px solid var(--border); border-radius:var(--radius); background:#fff; padding:16px; }
+    .validation h3{ margin:0 0 8px; font-size:1.05rem; }
+    .validation ul{ margin:0; padding-left:1.1em; color:var(--muted); }
+    .validation li{ margin:.35em 0; }
+  </style>
+</head>
+<body>
+
+  <section id="investors" class="kg-investors">
+    <div class="container">
+      <p class="eyebrow">Investors</p>
+      <h2 class="headline">Investment Opportunity</h2>
+      <p class="lede">We are opening our Seed round to strategic investors aligned with the future of anime and creator-led publishing.</p>
+
+      <!-- Investor Logos Grid (placeholders) -->
+      <div class="logos" aria-label="Investor Logos">
+        <div class="logo"><img src="https://placehold.co/160x80?text=Logo+1" alt="Investor logo 1"/></div>
+        <div class="logo"><img src="https://placehold.co/160x80?text=Logo+2" alt="Investor logo 2"/></div>
+        <div class="logo"><img src="https://placehold.co/160x80?text=Logo+3" alt="Investor logo 3"/></div>
+        <div class="logo"><img src="https://placehold.co/160x80?text=Logo+4" alt="Investor logo 4"/></div>
+        <div class="logo"><img src="https://placehold.co/160x80?text=Logo+5" alt="Investor logo 5"/></div>
+        <div class="logo"><img src="https://placehold.co/160x80?text=Logo+6" alt="Investor logo 6"/></div>
+      </div>
+
+      <!-- Round Details -->
+      <div class="round">
+        <article class="card">
+          <h3>Current Round</h3>
+          <p class="kv">$2M USD Seed Round</p>
+        </article>
+        <article class="card">
+          <h3>Pre-Money Valuation</h3>
+          <p class="kv">$8M USD</p>
+        </article>
+        <article class="card">
+          <h3>Equity Offered</h3>
+          <p class="kv">20%</p>
+        </article>
+        <article class="card">
+          <h3>Runway</h3>
+          <p class="kv">18 Months</p>
+        </article>
+      </div>
+
+      <!-- Use of Proceeds -->
+      <section class="proceeds" aria-labelledby="use-of-proceeds">
+        <h3 id="use-of-proceeds">Use of Proceeds</h3>
+        <div class="proceeds-grid">
+          <div class="proceed-item">
+            <strong>Content Acquisition (30%)</strong>
+            <p>Secure publication rights to video game/anime magazines and 10 manga IPs.</p>
+          </div>
+          <div class="proceed-item">
+            <strong>Payroll (36%)</strong>
+            <p>Existing team plus 3 new hires (female CTO, Head of Product, Publications Editor).</p>
+          </div>
+          <div class="proceed-item">
+            <strong>Marketing (15%)</strong>
+            <p>Global fanbase growth and artist acquisition campaigns.</p>
+          </div>
+          <div class="proceed-item">
+            <strong>Development (10%)</strong>
+            <p>Platform features, DRM, social integration, crowdfunding tools.</p>
+          </div>
+          <div class="proceed-item">
+            <strong>Accounting/Legal (5%)</strong>
+            <p>U.S. and Japan compliance and contracts.</p>
+          </div>
+          <div class="proceed-item">
+            <strong>Contingency (4%)</strong>
+            <p>Operational flexibility.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Early Validation -->
+      <section class="validation" aria-labelledby="early-validation">
+        <h3 id="early-validation">Early Validation</h3>
+        <ul>
+          <li>35+ Letters of Intent from anime/gaming artists</li>
+          <li>Industry recognition and testimonials from established artists</li>
+          <li>$150k in validated willingness-to-pay revenue</li>
+        </ul>
+      </section>
+
+    </div>
+  </section>
+
+</body>
+</html>
+
+

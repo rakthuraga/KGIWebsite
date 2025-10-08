@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Leadership & Advisory — Kintsugi Global</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <style>
+    html { line-height: 1.15; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; color:#0d1117; background:#ffffff; }
+    *,*::before,*::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+    :root{
+      --border:#e5e7eb;
+      --muted:#445066;
+      --maxw:1100px;
+      --xpad: clamp(32px, 5vw, 64px);
+      --radius:12px;
+    }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: var(--xpad) 20px; }
+    .eyebrow { letter-spacing:.08em; text-transform:uppercase; font-size:.75rem; color:var(--muted); margin:0 0 6px; }
+    .headline { margin:0 0 16px; font-size: clamp(1.5rem, 2.8vw, 2rem); line-height:1.2; font-weight:700; }
+
+    .list { display:grid; gap:12px; margin-top: 12px; }
+    .card {
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:#fff;
+      padding:14px 16px;
+    }
+    .name { margin:0 0 6px; font-weight:700; font-size:1rem; }
+    .desc, .bullets { margin:0; color:var(--muted); font-size:.95rem; line-height:1.55; }
+    .bullets { padding-left: 1.1em; margin-top: 6px; }
+  </style>
+</head>
+<body>
+
+  <section id="leadership">
+    <div class="wrap">
+      <p class="eyebrow">Leadership &amp; Advisory Team</p>
+      <h2 class="headline">35+ Years of Global Anime Leadership</h2>
+
+      <div class="list">
+
+        <!-- Ron Scovil -->
+        <article class="card">
+          <h3 class="name">Ron Scovil - Chairman CEO | Founder</h3>
+          <p class="desc">Pioneer in Anime/Manga IP and Digital Distribution</p>
+          <ul class="bullets">
+            <li>$75M Exit: Mixx Entertainment</li>
+            <li>$3.5B Exit: Fox Family/Saban</li>
+            <li>4M+ Graphic Novels Sold: NYT Bestseller recognition</li>
+            <li>Iconic IP Brought to US: Sailor Moon ($13.5B franchise), Mobile Suit Gundam ($23.7B franchise), Fruits Basket ($300M franchise)</li>
+          </ul>
+        </article>
+
+        <!-- Doug Montgomery -->
+        <article class="card">
+          <h3 class="name">Doug Montgomery - COO</h3>
+          <p class="desc">Cultural competency driving operations and growth; Cool Japan Award recipient</p>
+        </article>
+
+        <!-- Junko Ito -->
+        <article class="card">
+          <h3 class="name">Junko Ito - Co-founder, Japan</h3>
+          <p class="desc">Deep manga partnership roots and Japanese market expertise</p>
+        </article>
+
+        <!-- Kaz Ishikawa -->
+        <article class="card">
+          <h3 class="name">Kaz Ishikawa - COO, Japan</h3>
+          <p class="desc">Key industry connections and Japanese market insights</p>
+        </article>
+
+        <!-- Richard Montoya -->
+        <article class="card">
+          <h3 class="name">Richard Montoya - VP Interactive Technology</h3>
+          <p class="desc">UX leadership</p>
+        </article>
+
+        <!-- Advisory Board -->
+        <article class="card">
+          <h3 class="name">Advisory Board</h3>
+          <p class="desc">Industry experts from ByteDance (TikTok), Gainax Anime Studio, and Subnation</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

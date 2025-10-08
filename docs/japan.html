@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kintsugi Global Japan — Kintsugi Global</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+
+  <style>
+    html { line-height: 1.15; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; color:#0d1117; background:#ffffff; }
+    *,*::before,*::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    img { display:block; max-width:100%; height:auto; }
+
+    :root{
+      --text:#0d1117;
+      --muted:#445066;
+      --border:#e5e7eb;
+      --bg:#ffffff;
+      --radius:12px;
+      --maxw:1100px;
+      --xpad: clamp(32px, 5vw, 64px);
+    }
+
+    .kg-japan{ background:var(--bg); color:var(--text); padding: var(--xpad) 20px; }
+    .kg-japan .container{ max-width:var(--maxw); margin:0 auto; }
+
+    .section-head{ margin-bottom: 24px; }
+    .eyebrow{ letter-spacing:.08em; text-transform:uppercase; font-size:.75rem; color:var(--muted); margin-bottom:6px; }
+    .headline{ font-size: clamp(1.5rem, 2.8vw, 2rem); line-height:1.2; margin:0 0 10px; font-weight:700; }
+    .lede{ font-size:1rem; color:var(--muted); max-width:72ch; }
+
+    .japan-grid{ display:grid; grid-template-columns: 1.1fr .9fr; gap:20px; align-items:start; margin-top: 20px; }
+    @media (max-width: 900px){ .japan-grid{ grid-template-columns:1fr; } }
+
+    .card{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:var(--radius);
+      padding:16px;
+    }
+    .card h3{ margin:0 0 8px; font-size:1.05rem; font-weight:700; }
+    .card p, .card li, .card dd{ color:var(--muted); line-height:1.6; font-size:.95rem; margin:0; }
+    .card ul{ padding-left:1.1em; margin:0; }
+
+    dl{ margin:0; }
+    dt{ font-weight:700; margin-top:.4em; }
+    dd{ margin:0 0 .3em 0; }
+
+    .visual{ margin-top:24px; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:#fff; }
+    .visual figcaption{ font-size:.9rem; color:var(--muted); padding:10px 12px; }
+  </style>
+</head>
+<body>
+
+  <section id="japan" class="kg-japan">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Japan Entity</p>
+        <h2 class="headline">Kintsugi Global Japan - 100% Subsidiary</h2>
+        <p class="lede">Strategic Positioning: Our Japanese subsidiary serves as the critical bridge between global audiences and authentic Japanese creative content. This entity manages:</p>
+      </header>
+
+      <div class="japan-grid">
+        <article class="card">
+          <h3>This entity manages</h3>
+          <ul>
+            <li>Direct relationships with Japanese artists and studios</li>
+            <li>Local market expertise and cultural authenticity</li>
+            <li>DigiDen initiative participation and government relations</li>
+            <li>Content acquisition and IP partnerships</li>
+          </ul>
+        </article>
+
+        <article class="card" aria-labelledby="office-info">
+          <h3 id="office-info">Office Information</h3>
+          <ul>
+            <li>Full incorporation and operational compliance in Japan</li>
+            <li>Local team with deep industry connections</li>
+            <li>Strategic positioning for authentic creator relationships</li>
+          </ul>
+        </article>
+      </div>
+
+      <figure class="visual" role="group" aria-label="Japan office and local team">
+        <img src="japan-3776118_1920.jpg" alt="Kintsugi Global Japan office / local team visual placeholder" />
+        <figcaption>Our Tokyo presence connects creators, partners, and fans across Japan and the world.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+</body>
+</html>
+
+

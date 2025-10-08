@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Services — Kintsugi Global</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+
+  <style>
+    html { line-height: 1.15; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; color:#0d1117; background:#ffffff; }
+    *,*::before,*::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    img { display:block; max-width:100%; height:auto; border-radius: 10px; }
+
+    :root{
+      --text:#0d1117;
+      --muted:#5b677c;
+      --border:#e5e7eb;
+      --bg:#ffffff;
+      --radius:12px;
+      --maxw:1100px;
+      --xpad: clamp(32px, 5vw, 64px);
+    }
+
+    .kg-services{ background:var(--bg); color:var(--text); padding: var(--xpad) 20px; }
+    .container{ max-width:var(--maxw); margin:0 auto; }
+
+    .eyebrow{ letter-spacing:.08em; text-transform:uppercase; font-size:.75rem; color:var(--muted); margin:0 0 6px; }
+    .headline{ font-size: clamp(1.6rem, 3vw, 2.1rem); line-height:1.2; margin:0 0 10px; font-weight:800; }
+    .lede{ font-size:1rem; color:var(--muted); max-width:72ch; margin:0; }
+
+    /* service overview */
+    .grid{ display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin-top: 20px; }
+    .svc{ border:1px solid var(--border); border-radius:var(--radius); background:#fff; padding:16px; display:grid; gap:12px; grid-template-columns: 100px 1fr; align-items:start; }
+    .svc .icon { width:100px; height:100px; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:#f7f7f8; }
+    .svc .icon img{ width:100%; height:100%; object-fit: cover; object-position: center; display:block; }
+    .svc h3{ margin:0; font-size:1.05rem; }
+    .svc p{ margin:6px 0 0; color:var(--muted); line-height:1.55; font-size:.95rem; }
+    .svc ul{ margin:6px 0 0; padding-left:1.1em; color:var(--muted); }
+    .svc li{ margin:.3em 0; }
+
+    /* key features */
+    .features{ margin-top:24px; border:1px solid var(--border); border-radius:var(--radius); background:#fff; padding:16px; }
+    .features h3{ margin:0 0 8px; font-size:1.05rem; }
+    .features ul{ margin:0; padding-left:1.1em; color:var(--muted); }
+    .features li{ margin:.35em 0; }
+    .headline { font-weight: 800; }
+  .svc h3 { font-size: 1.1rem; font-weight: 800; }
+  </style>
+</head>
+<body>
+
+  <section id="services" class="kg-services">
+    <div class="container">
+      <p class="eyebrow">Services</p>
+      <h2 class="headline">Community-First Crowdfunding Platform</h2>
+
+  <!-- Service Overview  -->
+  <div class="grid" aria-label="Service Overview">
+    <!-- Sell Merchandise -->
+    <article class="svc">
+      <div class="icon" aria-hidden="true"><img src="engagimg1.png" alt="Merchandise preview" /></div>
+      <div class="copy">
+        <h3>Sell Merchandise</h3>
+        <p>Turn your art into products that sell. We handle printing, shipping, and customer service so you don’t have to. From posters to t-shirts to collectibles — you create, we take care of the rest.</p>
+      </div>
+    </article>
+
+    <!-- Crowdfund Projects -->
+    <article class="svc">
+      <div class="icon" aria-hidden="true"><img src="engagimg2.png" alt="Crowdfunding campaign visual" /></div>
+      <div class="copy">
+        <h3>Crowdfund Projects</h3>
+        <p>Need funding for your manga or anime project? We help you run successful crowdfunding campaigns. We’ll guide you through setup, promotion, and delivering rewards to backers.</p>
+      </div>
+    </article>
+
+    <!-- Market Your Work -->
+    <article class="svc">
+      <div class="icon" aria-hidden="true"><img src="engagimg3.png" alt="Marketing content example" /></div>
+      <div class="copy">
+        <h3>Market Your Work</h3>
+        <p>Get your art seen by more people. We manage your social media, create promotional content, and connect you with fans who love anime and manga. No marketing experience required.</p>
+      </div>
+    </article>
+
+    <!-- Broadcast Content -->
+    <article class="svc">
+      <div class="icon" aria-hidden="true"><img src="engagimg4.png" alt="Broadcast and streaming preview" /></div>
+      <div class="copy">
+        <h3>Broadcast Content</h3>
+        <p>Stream your drawing process or host live events. We help you set up broadcasts, plan content, and build an audience. Share your creative journey with fans around the world.</p>
+      </div>
+    </article>
+  </div>
+  <section class="features" aria-labelledby="additional-support" style="margin-top:24px;">
+    <h3 id="additional-support">Additional Support</h3>
+    <ul>
+      <li><strong>Legal help:</strong> Contract reviews and protecting your work</li>
+      <li><strong>Business advice:</strong> Planning your career and making smart decisions</li>
+      <li><strong>Accounting:</strong> Managing money, taxes, and payments</li>
+      <li><strong>Networking:</strong> Meet other artists and industry professionals</li>
+      <li><strong>Mentorship:</strong> Learn from experienced creators</li>
+      <li><strong>Industry connections:</strong> Access to publishers, studios, and opportunities</li>
+    </ul>
+    <p style="margin-top:10px; color:var(--muted);">
+      Our team handles the business stuff so you can focus on creating amazing anime and manga art. We’re here to help artists at every stage build successful careers.
+    </p>
+  </section>
+
+    </div>
+  </section>
+
+</body>
+</html>
+
+
