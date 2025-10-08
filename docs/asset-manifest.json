@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/KGIWebsite/static/css/main.f4854cc8.css",
-    "main.js": "/KGIWebsite/static/js/main.dadcece2.js",
+    "main.js": "/KGIWebsite/static/js/main.7e6dc085.js",
     "index.html": "/KGIWebsite/index.html",
     "main.f4854cc8.css.map": "/KGIWebsite/static/css/main.f4854cc8.css.map",
-    "main.dadcece2.js.map": "/KGIWebsite/static/js/main.dadcece2.js.map"
+    "main.7e6dc085.js.map": "/KGIWebsite/static/js/main.7e6dc085.js.map"
   },
   "entrypoints": [
     "static/css/main.f4854cc8.css",
-    "static/js/main.dadcece2.js"
+    "static/js/main.7e6dc085.js"
   ]
 }
