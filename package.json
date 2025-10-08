@@ -2,6 +2,7 @@
   "name": "portfolio-website-sample-community",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://rakthuraga.github.io/KGIWebsite",
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "next": "^12.1.10",
