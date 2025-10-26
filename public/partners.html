@@ -123,6 +123,41 @@
     display: inline-block;
   }
   .btn:hover { opacity: 0.9; }
+  .logo-wall {
+    margin-top: 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+    padding: 16px;
+  }
+
+  .logo-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    align-items: center;
+  }
+
+  .logo {
+    display: grid;
+    place-items: center;
+    height: 88px;              
+    padding: 12px;
+    border: 1px dashed #eef1f4;  
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .logo img {
+    max-height: 56px;         
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: grayscale(0.1);
+    opacity: 0.95;
+    transition: transform .15s ease, opacity .15s ease, filter .15s ease;
+  }
+  .logo img:hover { transform: scale(1.03); filter: none; opacity: 1; }
 
 </style>
 
@@ -203,8 +238,41 @@
               });
         </script>
     </div>
+    <div class="logo-wall" aria-label="Partner logos">
+      <div class="logo-grid">
+        <div class="logo">
+          <img src="partners_images/DigiDen.png" alt="Japan’s DigiDen Initiative" loading="lazy" />
+        </div>
+        <div class="logo">
+          <img src="partners_images/Picture11.png" alt="Unstoppable Domains" loading="lazy" />
+        </div>
+        <div class="logo">
+          <img src="partners_images/Picture12.png" alt="BNAT" loading="lazy" />
+        </div>
+        <div class="logo">
+          <img src="partners_images/Picture16.png" alt="Blockbuster" loading="lazy" />
+        </div>
+        <div class="logo">
+          <img src="partners_images/Picture10.png" alt="Amazon" loading="lazy" />
+        </div>
+        <div class="logo">
+          <img src="partners_images/Picture3.png" alt="Tezuka Productions" loading="lazy" />
+        </div>
+        <div class="logo">
+          <img src="partners_images/Picture2.png" alt="Benten Film" loading="lazy" />
+        </div>
+        <div class="logo">
+          <img src="partners_images/Picture8.png" alt="DK" loading="lazy" />
+        </div>
+        <div class="logo">
+          <img src="partners_images/Tokuma Shoten.png" alt="Tokuma Shoten" loading="lazy" />
+        </div>
+        <div class="logo">
+          <img src="partners_images/copysigh.avif" alt="Copysigh" loading="lazy" />
+        </div>
+      </div>
+    </div>
   </section>
-
 </body>
 </html>
 
