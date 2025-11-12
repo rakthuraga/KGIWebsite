@@ -227,5 +227,134 @@
     }
   </script>
 
+  <!-- Form submission handler for creator and partner applications -->
+  <script>
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyl59coHBR2DKx3Xq49izLZ-hLBw7quY22cikAOma3M1vXPzmkAE4oWp3XZfBSNVxE/exec';
+
+    function showMessage(form, text, isError) {
+      let region = form.querySelector('.form-msg');
+      if (!region) {
+        region = document.createElement('div');
+        region.className = 'form-msg';
+        region.setAttribute('role', 'status');
+        region.style.marginTop = '8px';
+        region.style.fontSize = '0.95rem';
+        form.appendChild(region);
+      }
+      region.textContent = text;
+      region.style.color = isError ? '#9b2c2c' : '#166534';
+    }
+
+    async function postToEndpoint(payload) {
+      try {
+        const res = await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          mode: 'cors'
+        });
+        const text = await res.text();
+        try { return JSON.parse(text); } catch (e) { throw new Error('Non-JSON response'); }
+      } catch (err) {
+        try {
+          await submitViaForm(payload);
+          return { status: 'success', message: 'submitted-via-form-fallback' };
+        } catch (err2) {
+          throw err2;
+        }
+      }
+    }
+
+    function submitViaForm(payload){
+      return new Promise((resolve, reject) => {
+        try {
+          let iframe = document.getElementById('hidden-form-target');
+          if (!iframe) {
+            iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.id = 'hidden-form-target';
+            iframe.name = 'hidden-form-target';
+            document.body.appendChild(iframe);
+          }
+
+          const form = document.createElement('form');
+          form.method = 'post';
+          form.action = APPS_SCRIPT_URL;
+          form.target = iframe.name;
+          form.style.display = 'none';
+
+          const addField = (name, value) => {
+            const i = document.createElement('input');
+            i.type = 'hidden';
+            i.name = name;
+            i.value = value || '';
+            form.appendChild(i);
+          };
+
+          addField('name', payload.name || '');
+          addField('email', payload.email || '');
+          if (payload.link) addField('link', payload.link);
+          if (payload.organization) addField('organization', payload.organization);
+          if (payload.audience) addField('audience', payload.audience);
+
+          document.body.appendChild(form);
+
+          form.submit();
+          setTimeout(() => {
+            try { document.body.removeChild(form); } catch (e) {}
+            resolve();
+          }, 800);
+        } catch (e) {
+          reject(e);
+        }
+      });
+    }
+
+    function wireForm(form, opts = {}){
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        const submitBtn = form.querySelector('button[type=submit]');
+        const name = (form.querySelector('input[name="name"]') || {}).value || '';
+        const email = (form.querySelector('input[type="email"]') || {}).value || '';
+        const link = (form.querySelector('input[name="link"]') || {}).value || '';
+        const organization = (form.querySelector('input[name="organization"]') || {}).value || '';
+        const audience = (form.querySelector('input[name="audience"]') || {}).value || opts.audience || '';
+
+        if (!email) {
+          showMessage(form, 'Please enter a valid email address.', true);
+          return;
+        }
+
+        try {
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+          const payload = { name: name.trim(), email: email.trim(), audience };
+          if (link) payload.link = link.trim();
+          if (organization) payload.organization = organization.trim();
+          
+          const json = await postToEndpoint(payload);
+          if (json && json.status === 'success') {
+            showMessage(form, 'Thanks — we saved your info.', false);
+            if (submitBtn) submitBtn.textContent = 'Sent';
+          } else {
+            const msg = (json && json.message) ? json.message : 'Submission failed';
+            showMessage(form, msg, true);
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Try again'; }
+          }
+        } catch (err) {
+          showMessage(form, err.message || 'Network error', true);
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Try again'; }
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      const creatorForm = document.querySelector('form[aria-label="Artist application"]');
+      if (creatorForm) wireForm(creatorForm, { audience: 'artist' });
+
+      const partnerForm = document.querySelector('form[aria-label="Partner application"]');
+      if (partnerForm) wireForm(partnerForm, { audience: 'partner' });
+    });
+  </script>
+
 </body>
 </html>

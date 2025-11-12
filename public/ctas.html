@@ -119,5 +119,145 @@
   </div>
 
   <!-- Accessibility notes: CTAs that navigate are anchors styled as buttons per WAI guidance. -->
+  
+  <!-- Submission handler: posts form data to a Google Apps Script endpoint. Replace APPS_SCRIPT_URL with your deployed URL. -->
+  <script>
+    // TODO: replace this with your deployed Apps Script "exec" URL
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyl59coHBR2DKx3Xq49izLZ-hLBw7quY22cikAOma3M1vXPzmkAE4oWp3XZfBSNVxE/exec';
+
+    function showMessage(form, text, isError) {
+      let region = form.querySelector('.form-msg');
+      if (!region) {
+        region = document.createElement('div');
+        region.className = 'form-msg';
+        region.setAttribute('role', 'status');
+        region.style.marginTop = '8px';
+        region.style.fontSize = '0.95rem';
+        form.appendChild(region);
+      }
+      region.textContent = text;
+      region.style.color = isError ? '#9b2c2c' : '#166534';
+    }
+
+    async function postToEndpoint(payload) {
+      if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.indexOf('REPLACE_WITH') === 0) {
+        throw new Error('Apps Script URL not configured. Replace APPS_SCRIPT_URL in ctas.html with your deploy URL.');
+      }
+
+      // Try JSON fetch first (clean UX). If that fails (CORS/preflight), fall back to a plain form POST
+      try {
+        const res = await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          mode: 'cors'
+        });
+
+        // If the response is not JSON or not ok, throw to trigger fallback
+        const text = await res.text();
+        try { return JSON.parse(text); } catch (e) { throw new Error('Non-JSON response'); }
+      } catch (err) {
+        // fallback: submit a hidden form (avoids preflight/CORS issues)
+        try {
+          await submitViaForm(payload);
+          return { status: 'success', message: 'submitted-via-form-fallback' };
+        } catch (err2) {
+          throw err2;
+        }
+      }
+    }
+
+    // Create and submit a hidden form targeting an invisible iframe so the page doesn't navigate.
+    function submitViaForm(payload){
+      return new Promise((resolve, reject) => {
+        try {
+          // ensure hidden iframe exists
+          let iframe = document.getElementById('hidden-form-target');
+          if (!iframe) {
+            iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.id = 'hidden-form-target';
+            iframe.name = 'hidden-form-target';
+            document.body.appendChild(iframe);
+          }
+
+          const form = document.createElement('form');
+          form.method = 'post';
+          form.action = APPS_SCRIPT_URL;
+          form.target = iframe.name;
+          form.style.display = 'none';
+
+          const addField = (name, value) => {
+            const i = document.createElement('input');
+            i.type = 'hidden';
+            i.name = name;
+            i.value = value || '';
+            form.appendChild(i);
+          };
+
+          addField('name', payload.name || '');
+          addField('email', payload.email || '');
+          if (payload.audience) addField('audience', payload.audience);
+
+          document.body.appendChild(form);
+
+          // Submit and resolve shortly after (we can't read the iframe response reliably without CORS)
+          form.submit();
+          setTimeout(() => {
+            try { document.body.removeChild(form); } catch (e) {}
+            resolve();
+          }, 800);
+        } catch (e) {
+          reject(e);
+        }
+      });
+    }
+
+    function wireForm(form, opts = {}){
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        const submitBtn = form.querySelector('button[type=submit]');
+        const name = (form.querySelector('input[name="name"]') || {}).value || '';
+        const email = (form.querySelector('input[type="email"]') || {}).value || '';
+        const audience = (form.querySelector('input[name="audience"]') || {}).value || opts.audience || '';
+
+        if (!email) {
+          showMessage(form, 'Please enter a valid email address.', true);
+          return;
+        }
+
+        try {
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+          const payload = { name: name.trim(), email: email.trim(), audience };
+          const json = await postToEndpoint(payload);
+          if (json && json.status === 'success') {
+            showMessage(form, 'Thanks — we saved your info.', false);
+            if (submitBtn) submitBtn.textContent = 'Sent';
+          } else {
+            const msg = (json && json.message) ? json.message : 'Submission failed';
+            showMessage(form, msg, true);
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Try again'; }
+          }
+        } catch (err) {
+          showMessage(form, err.message || 'Network error', true);
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Try again'; }
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      // Wire the newsletter form
+      const newsletter = document.querySelector('#newsletter form');
+      if (newsletter) wireForm(newsletter, { audience: 'newsletter' });
+
+      // Wire early access
+      const early = document.querySelector('#early-access form');
+      if (early) wireForm(early, { audience: 'early-access' });
+
+      // Wire investor deck request (already contains hidden audience/intent fields)
+      const investor = document.querySelector('form[aria-label^="Investor"]') || document.querySelector('#investors form');
+      if (investor) wireForm(investor, { audience: 'investor' });
+    });
+  </script>
 </body>
 </html>
