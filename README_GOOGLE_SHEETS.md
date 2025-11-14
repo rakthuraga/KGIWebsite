@@ -48,6 +48,7 @@ function doPost(e) {
     }
 
     sheet.appendRow([timestamp, name, email, audience]);
+    
 
     return ContentService.createTextOutput(JSON.stringify({ status: 'success' })).setMimeType(ContentService.MimeType.JSON);
   } catch (err) {

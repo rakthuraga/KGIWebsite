@@ -54,25 +54,19 @@
     
 
     <!-- Role-specific sign-up blocks (two cards in a row: Artists & Fans) -->
-    <section class="block">
-        <div class="grid two-col">
-            <!-- Investor (col 1) -->
-            <article id="investors" class="card" aria-labelledby="investors-h">
-              <span class="tag">For Investors</span>
-              <h2 id="investors-h">Request Investor Materials</h2>
-              <!-- 1) Request Deck -->
-              <form onsubmit="return false" aria-label="Investor deck request" method="post" action="#">
-                  <input type="hidden" name="audience" value="investor">
-                  <input type="hidden" name="intent" value="deck">
-                  <label for="in1-name">Name</label>
-                  <input id="in1-name" name="name" type="text" placeholder="Full name" required>
-                  <label for="in1-email">Email</label>
-                  <input id="in1-email" name="email" type="email" placeholder="example@email.com" required>
-                  <label for="in1-firm">Firm</label>
-                  <input id="in1-firm" name="firm" type="text" placeholder="Fund / Family Office">
-                  <button type="submit" class="sub-f-btn">Reach Out</button>
-              </form>
-            </article>
+    <section id="investors" class="block card" aria-labelledby="investors-h">
+      <h2 id="investors-h">Request Investor Materials</h2>
+      <form onsubmit="return false" aria-label="Investor deck request">
+        <label for="in1-name">Title</label>
+        <input id="in1-name" name="title" type="text" placeholder="Title" required>
+        <label for="in1-name">Name</label>
+        <input id="in1-name" name="name" type="text" placeholder="Full name" required>
+        <label for="in1-email">Email</label>
+        <input id="in1-email" name="email" type="email" placeholder="example@email.com" required>
+        <label for="in1-link">Link</label>
+        <input id="in1-link" name="link" type="url" placeholder="Website or LinkedIn">
+        <button type="submit" class="sub-f-btn">Reach Out</button>
+      </form>
     </section>
 
     <!-- Additional CTAs (#18) -->
@@ -198,6 +192,8 @@
           addField('name', payload.name || '');
           addField('email', payload.email || '');
           if (payload.audience) addField('audience', payload.audience);
+          if (payload.link) addField('link', payload.link);
+          if (payload.title) addField('title', payload.title);
 
           document.body.appendChild(form);
 
@@ -217,9 +213,11 @@
       form.addEventListener('submit', async function(e){
         e.preventDefault();
         const submitBtn = form.querySelector('button[type=submit]');
+        const title = (form.querySelector('input[name="title"]') || {}).value || '';
         const name = (form.querySelector('input[name="name"]') || {}).value || '';
         const email = (form.querySelector('input[type="email"]') || {}).value || '';
         const audience = (form.querySelector('input[name="audience"]') || {}).value || opts.audience || '';
+        const link = (form.querySelector('input[name="link"]') || {}).value || '';
 
         if (!email) {
           showMessage(form, 'Please enter a valid email address.', true);
@@ -229,6 +227,8 @@
         try {
           if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
           const payload = { name: name.trim(), email: email.trim(), audience };
+          if (link) payload.link = link.trim();
+          if (title) payload.title = title.trim();
           const json = await postToEndpoint(payload);
           if (json && json.status === 'success') {
             showMessage(form, 'Thanks — we saved your info.', false);
@@ -255,8 +255,8 @@
       if (early) wireForm(early, { audience: 'early-access' });
 
       // Wire investor deck request (already contains hidden audience/intent fields)
-      const investor = document.querySelector('form[aria-label^="Investor"]') || document.querySelector('#investors form');
-      if (investor) wireForm(investor, { audience: 'investor' });
+      const investors = document.querySelector('#investors form');
+      if (investors) wireForm(investors, { audience: 'investors' });
     });
   </script>
 </body>
